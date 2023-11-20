@@ -134,6 +134,7 @@ keep-tablet()
   text-align: justify;
   word-wrap: break-word;
 keep-tablet()
+  border-bottom: 2px dashed var(--border-color);
 }
 .post-page-container .article-content-container .article-content-bottom .article-content .article-aging-tips {
   position: relative;
