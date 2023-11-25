@@ -201,7 +201,7 @@
                             <div class="author">
                                 <span class="name">花木凋零成兰</span>
                                 
-                                    <span class="author-badge">Lv1</span>
+                                    <span class="author-badge">Lv2</span>
                                 
                             </div>
                             <div class="meta-info border-box">
@@ -221,7 +221,7 @@
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Nov 25 2023 17:56:56 GMT+0800">2023-11-25 17:56:56</span>
+                <span class="pc" data-updated="Sat Nov 25 2023 18:15:44 GMT+0800">2023-11-25 18:15:44</span>
             </span>
         
 
@@ -241,13 +241,10 @@
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="article-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/leetcode/">leetcode</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E7%BB%84/">数组</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a></li>
@@ -260,7 +257,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>721 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>891 字</span>
             </span>
         
         
@@ -286,7 +283,8 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+                    <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/description/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
 <p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
 <p>你可以按任意顺序返回答案。</p>
 <p><strong>示例 1：</strong></p>
@@ -332,6 +330,12 @@
 <p>代码实现如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; numHash = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (numHash.containsKey(num)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, numHash.get(num)&#125;;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                numHash.put(nums[i], i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>我们对于每一个<code>nums[i]</code>先查询表中是否存在<code>target - nums[i]</code>：</p>
+<ul>
+<li>若不存在，则说明对应的<code>target - nums[i]</code>要么不在数组中；要么在数组中，只是还未插入哈希表中，因此可将该元素插入到哈希表中，在后续遍历到值为<code>target - nums[i]</code>的数组元素时，即可获得最终结果。</li>
+<li>若存在，则说明已经找到满足条件的答案，直接将查找结果返回即可</li>
+</ul>
+<p><strong>使用如上方法，不但减少时间复杂度以及对空间的损耗，还可以避免查询到的<code>target - nums[i]</code>与自身<code>nums[i]</code>匹配。</strong></p>
 <p>提交结果如下所示：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了99.55% 的Java用户</span><br><span class="line">    内存消耗:42.5 MB,击败了63.87% 的Java用户</span><br></pre></td></tr></table></figure>
 
@@ -398,15 +402,11 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/leetcode/">leetcode</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
@@ -425,6 +425,22 @@
 
                 
                     <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/11/25/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-704/"
+                                   title="二分查找_704"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">二分查找_704</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
                         
                         
                             <div class="article-next">
