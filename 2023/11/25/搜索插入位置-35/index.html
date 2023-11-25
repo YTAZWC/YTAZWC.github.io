@@ -9,7 +9,7 @@
     
     <title>
         
-            二分查找_704 |
+            搜索插入位置_35 |
         
         花木凋零成兰
     </title>
@@ -186,7 +186,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        二分查找_704
+                        搜索插入位置_35
                     </div>
                 
 
@@ -215,13 +215,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-25 18:13:32</span>
-                <span class="mobile">2023-11-25 18:13</span>
+                <span class="pc">2023-11-25 23:16:42</span>
+                <span class="mobile">2023-11-25 23:16</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Nov 25 2023 18:37:27 GMT+0800">2023-11-25 18:37:27</span>
+                <span class="pc" data-updated="Sat Nov 25 2023 23:54:52 GMT+0800">2023-11-25 23:54:52</span>
             </span>
         
 
@@ -257,12 +257,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>418 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>549 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
             </span>
         
         
@@ -283,37 +283,45 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
-<p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
+                    <h1 id="搜索插入位置"><a href="#搜索插入位置" class="headerlink" title="搜索插入位置"></a>搜索插入位置</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-insert-position/description/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
+<p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
+<p>请必须使用时间复杂度为 <code>O(log n)</code> 的算法。</p>
 <p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,0,3,5,9,12], target = 9</span><br><span class="line">输出: 4</span><br><span class="line">解释: 9 出现在 nums 中并且下标为 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 5</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,0,3,5,9,12], target = 2</span><br><span class="line">输出: -1</span><br><span class="line">解释: 2 不存在 nums 中因此返回 -1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 2</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure>
 
-<p><strong>提示：</strong></p>
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 7</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 为 <strong>无重复元素</strong> 的 <strong>升序</strong> 排列数组</li>
+<li><code>-104 &lt;= target &lt;= 104</code></li>
+</ul>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><p>思路分析：</p>
 <ol>
-<li>你可以假设 <code>nums</code> 中的所有元素是不重复的。</li>
-<li><code>n</code> 将在 <code>[1, 10000]</code>之间。</li>
-<li><code>nums</code> 的每个元素都将在 <code>[-9999, 9999]</code>之间。</li>
+<li>首先对题目进行分析，“nums为 无重复元素 的升序 排列数组 ”，那么根据题目可以考虑使用二分查找，在数组中查找目标值</li>
+<li>如果目标值<code>target</code>在数组中，那么直接返回目标值的索引。</li>
+<li>如果目标值<code>target</code>不在数组中，那么返回其按顺序插入的位置。<ol>
+<li>在最后一次和left有关的查找中 mid指针指在刚好小于目标值的索引处</li>
+<li>因此left &#x3D; mid+1 刚好将left指针指在target按顺序插入的位置处</li>
+<li>返回left的值即可</li>
 </ol>
-<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><p>解题思路：</p>
-<ol>
-<li>使用二分查找对数组进行查找</li>
-<li>每次对数组进行二分，获得中间索引<code>mid</code>，然后比较<code>nums[mid]</code>和<code>target</code></li>
-<li>如果<code>nums[mid] &lt; target</code>，则说明<code>target</code>在数组的右侧，从<code>mid+1</code>处开始查找</li>
-<li>如果<code>nums[mid] &gt; target</code>，则说明<code>target</code>在数组的左侧，以<code>mid-1</code>为终点，重新查找</li>
-<li>如果<code>nums[mid] = target</code>，即查找到对应值，将其索引返回，否则返回-1即可</li>
+</li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right - left) / <span class="number">2</span> + left;	<span class="comment">// 避免 right+left超出int范围</span></span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">searchInsert</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="comment">// 使用第一种二分法写法，区间左闭右闭</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 查找到对应位置 直接返回</span></span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 未找到对应位置，返回目标值按顺序插入的位置</span></span><br><span class="line">        <span class="comment">// 在最后一次和left有关的查找中 mid指针指在刚好小于目标值的索引处</span></span><br><span class="line">        <span class="comment">// 因此left = mid+1 刚好将left指针指在target按顺序插入的位置处</span></span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:43.7 MB,击败了5.00% 的Java用户</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:42.6 MB,击败了5.01% 的Java用户</span><br></pre></td></tr></table></figure>
 
-<p>时间复杂度分析：</p>
+<p>复杂度分析：</p>
 <ul>
-<li>时间复杂度：O(logn)</li>
+<li>时间复杂度：O(log n)</li>
 <li>空间复杂度：O(1)</li>
 </ul>
 
@@ -325,11 +333,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                二分查找_704
+                搜索插入位置_35
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/11/25/二分查找-704/
+                2023/11/25/搜索插入位置-35/
             </div>
         </div>
 
@@ -345,7 +353,7 @@
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-11-25 18:13</div>
+                <div class="content">2023-11-25 23:16</div>
             </div>
 
 
@@ -403,31 +411,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/25/%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE-35/"
-                                   title="搜索插入位置_35"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">搜索插入位置_35</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/25/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-1/"
-                                   title="两数之和_1"
+                                   href="/2023/11/25/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-704/"
+                                   title="二分查找_704"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">两数之和_1</span>
+                                        <span class="post-nav-title-item text-ellipsis">二分查找_704</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -455,7 +447,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">搜索插入位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a></li></ol>
     </div>
 </div>
 
@@ -624,7 +616,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">搜索插入位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a></li></ol>
     </div>
 </div>
 
