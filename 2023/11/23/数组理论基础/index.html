@@ -221,7 +221,7 @@
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Nov 25 2023 19:49:43 GMT+0800">2023-11-25 19:49:43</span>
+                <span class="pc" data-updated="Sun Nov 26 2023 11:21:46 GMT+0800">2023-11-26 11:21:46</span>
             </span>
         
 
@@ -257,7 +257,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>972 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>971 字</span>
             </span>
         
         
@@ -325,7 +325,6 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>使用二分查找的前提：</strong></p>
 <ul>
 <li>数组为有序数组</li>
-<li>数组中无重复元素</li>
 </ul>
 <p>使用二分法的关键是：想清楚区间的定义，区间的定义就是不变量，要在二分查找的过程中，保持不变量，就是在while寻找中每一次边界的处理都要坚持根据区间的定义来操作，这就是<strong>循环不变量</strong>规则。</p>
 <h3 id="二分法第一种写法"><a href="#二分法第一种写法" class="headerlink" title="二分法第一种写法"></a>二分法第一种写法</h3><p>定义<code>target</code>在一个左闭右币的区间里，即**<code>[left, right]</code>**</p>
@@ -358,7 +357,8 @@
 <p>实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="comment">// 避免当 target 小于nums[0] 或 大于nums[nums.length - 1]时多次循环运算</span></span><br><span class="line">        <span class="keyword">if</span> (target &lt; nums[<span class="number">0</span>] || target &gt; nums[nums.length - <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>, right = nums.length;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target)</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target)</span><br><span class="line">                right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h3><h1 id="学习文章"><a href="#学习文章" class="headerlink" title="学习文章"></a>学习文章</h1><p><a class="link"   target="_blank" rel="noopener" href="https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html" >代码随想录 (programmercarl.com)<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h3><p><a class="link"   target="_blank" rel="noopener" href="https://ytazwc.top/2023/11/25/%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE-35/" >搜索插入位置_35<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="学习文章"><a href="#学习文章" class="headerlink" title="学习文章"></a>学习文章</h1><p><a class="link"   target="_blank" rel="noopener" href="https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html" >代码随想录 (programmercarl.com)<i class="fas fa-external-link-alt"></i></a></p>
 
                 </div>
 
