@@ -221,7 +221,7 @@
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Nov 26 2023 22:40:19 GMT+0800">2023-11-26 22:40:19</span>
+                <span class="pc" data-updated="Mon Nov 27 2023 12:42:59 GMT+0800">2023-11-27 12:42:59</span>
             </span>
         
 
@@ -257,7 +257,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>540 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>539 字</span>
             </span>
         
         
@@ -299,11 +299,11 @@
 </ul>
 <h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>思路分析：</p>
 <ol>
-<li>根据题目提示，x的范围在<code>0 &lt;= 0 &lt;= 2^31-1</code>，如果是暴力循环遍历求解寻找平方根，会超时，所以我们考虑使用二分来搜索平方根。</li>
-<li>使用二分时，我们需要考虑<code>if</code>判断条件，同时我们可以根据算术平方根的性质有<code>x = a*a, a =&gt; 2, a*a/2 &gt; a</code>即二分搜索的终点可以缩减为<code>x/2</code></li>
+<li>根据题目提示，x的范围在<code>0 &lt;= x &lt;= 2^31-1</code>，如果是暴力循环遍历求解寻找平方根，会超时，所以我们考虑使用二分来搜索平方根。</li>
+<li>使用二分时，我们需要考虑<code>if</code>判断条件，同时我们可以根据算术平方根的性质有<code>x = a*a, a &gt;= 2, a*a/2 &gt; a</code>即二分搜索的终点可以缩减为<code>x/2</code></li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">mySqrt</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (x == <span class="number">0</span> || x == <span class="number">1</span>)     <span class="comment">// 若x为1或2则算术平方根为x本身直接返回即可</span></span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        <span class="comment">// 当 x &gt;= 2时 由算数平方根的性质可以得出 x的算术平方根a 一定 &lt; x/2</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> x / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// 使用二分来搜索</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> ((end - start) &gt;&gt; <span class="number">1</span>) + start;</span><br><span class="line">            <span class="keyword">if</span> ((<span class="type">long</span>)mid * mid &gt; x) &#123;</span><br><span class="line">                end = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                start = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回结果刚好是x的算术平方根的两边整数端点</span></span><br><span class="line">        <span class="comment">// 根据题意返回左端点</span></span><br><span class="line">       <span class="keyword">if</span> (start*start &gt; x) start -= <span class="number">1L</span>;</span><br><span class="line">       <span class="keyword">return</span> (<span class="type">int</span>) start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">mySqrt</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (x == <span class="number">0</span> || x == <span class="number">1</span>)     <span class="comment">// 若x为1或2则算术平方根为x本身直接返回即可</span></span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        <span class="comment">// 当 x &gt;= 2时 由算数平方根的性质可以得出 x的算术平方根a 一定 &lt; x/2</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> x / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// 使用二分来搜索</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> ((end - start) &gt;&gt; <span class="number">1</span>) + start;</span><br><span class="line">            <span class="keyword">if</span> ((<span class="type">long</span>)mid * mid &gt; x) &#123;</span><br><span class="line">                end = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                start = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回结果刚好是x的算术平方根的两边整数端点</span></span><br><span class="line">        <span class="comment">// 根据题意返回左端点</span></span><br><span class="line">       <span class="keyword">if</span> (start*start &gt; x) start -= <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">return</span> start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>提交结果如下：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了94.10% 的Java用户</span><br><span class="line">    内存消耗:39.1 MB,击败了5.01% 的Java用户</span><br></pre></td></tr></table></figure>
@@ -401,6 +401,22 @@
 
                 
                     <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/11/27/%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0-367/"
+                                   title="有效的完全平方数_367"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">有效的完全平方数_367</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
                         
                         
                             <div class="article-next">
