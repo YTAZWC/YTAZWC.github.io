@@ -9,7 +9,7 @@
     
     <title>
         
-            移除元素_27 |
+            删除有序数组中的重复项_26 |
         
         花木凋零成兰
     </title>
@@ -186,7 +186,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        移除元素_27
+                        删除有序数组中的重复项_26
                     </div>
                 
 
@@ -215,13 +215,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-27 16:05:27</span>
-                <span class="mobile">2023-11-27 16:05</span>
+                <span class="pc">2023-11-27 21:25:20</span>
+                <span class="mobile">2023-11-27 21:25</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Mon Nov 27 2023 16:55:58 GMT+0800">2023-11-27 16:55:58</span>
+                <span class="pc" data-updated="Mon Nov 27 2023 22:39:54 GMT+0800">2023-11-27 22:39:54</span>
             </span>
         
 
@@ -237,32 +237,16 @@
         
 
         
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E7%BB%84/">数组</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
 
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>944 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
             </span>
         
         
@@ -283,46 +267,55 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-element/description/" >27. 移除元素 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
-<p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a class="link"   target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" >原地<i class="fas fa-external-link-alt"></i></a></strong> 移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p>
-<p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong><a class="link"   target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" >原地 <i class="fas fa-external-link-alt"></i></a>修改输入数组</strong>。</p>
-<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
-<p><strong>说明:</strong></p>
-<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
-<p>请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
-<p>你可以想象内部操作如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">// 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span><br><span class="line">for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                    <h1 id="删除有序数组中的重复项"><a href="#删除有序数组中的重复项" class="headerlink" title="删除有序数组中的重复项"></a>删除有序数组中的重复项</h1><p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你**<a class="link"   target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" > 原地<i class="fas fa-external-link-alt"></i></a>** 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p>
+<p>考虑 <code>nums</code> 的唯一元素的数量为 <code>k</code> ，你需要做以下事情确保你的题解可以被通过：</p>
+<ul>
+<li>更改数组 <code>nums</code> ，使 <code>nums</code> 的前 <code>k</code> 个元素包含唯一元素，并按照它们最初在 <code>nums</code> 中出现的顺序排列。<code>nums</code> 的其余元素与 <code>nums</code> 的大小不重要。</li>
+<li>返回 <code>k</code> 。</li>
+</ul>
+<p><strong>判题标准:</strong></p>
+<p>系统会用下面的代码来测试你的题解:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = [...]; // 输入数组</span><br><span class="line">int[] expectedNums = [...]; // 长度正确的期望答案</span><br><span class="line"></span><br><span class="line">int k = removeDuplicates(nums); // 调用</span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line">for (int i = 0; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>如果所有断言都通过，那么您的题解将被 <strong>通过</strong>。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,2,3], val = 3</span><br><span class="line">输出：2, nums = [2,2]</span><br><span class="line">解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,1,2]</span><br><span class="line">输出：2, nums = [1,2,_]</span><br><span class="line">解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,2,2,3,0,4,2], val = 2</span><br><span class="line">输出：5, nums = [0,1,3,0,4]</span><br><span class="line">解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">输出：5, nums = [0,1,2,3,4]</span><br><span class="line">解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>0 &lt;= nums.length &lt;= 100</code></li>
-<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
-<li><code>0 &lt;= val &lt;= 100</code></li>
+<li><code>1 &lt;= nums.length &lt;= 3 * 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非严格递增</strong> 排列</li>
 </ul>
 <h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>思路分析：</p>
 <ol>
-<li>根据题目要求和示例，对于移除数组中的元素，我们只需要将不等于<code>val</code>的数组元素提前，不用考虑提前的数组元素之间的顺序，然后返回对应的长度即可，同时对于等于<code>val</code>的数组元素，我们只需将其提取到数组元素后端即可。</li>
-<li>对此，可以考虑使用双指针，指针<code>i</code>遍历不等于<code>val</code>的数组元素，指针<code>j</code>遍历等于<code>val</code>的数组元素，然后指针<code>i</code>和指针<code>j</code>对应的数组元素值进行交换，从而实现移除值为<code>val</code>的数组元素</li>
+<li>首先考虑暴力求解，使用双循环遍历来修改原数组，但是这样时间复杂度为O(n^2)，不推荐。</li>
+<li>那么在原数组上对原数组进行修改，我们可以考虑使用双指针，通过双指针单循环来代替暴力双循环的做法，从而将时间复杂度降为O(n)。</li>
+<li>因为<code>nums</code>按非严格递增排列，那么有数组中的重复项均排列在一起；且元素的相对顺序要保持一致，那么考虑使用快慢双指针法来解决。</li>
+<li><code>slow</code>慢指针用于指向新数组的索引，<code>fast</code>快指针用于遍历旧数组，寻找新数组的元素。</li>
+<li>且<code>slow</code>指针和<code>fast</code>指针应该从索引为1的地方开始遍历，因为数组的第一个元素不需要考虑是否存在重复项</li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> &#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length-<span class="number">1</span>;       <span class="comment">// 用于遍历值不为val的数组元素</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;       <span class="comment">// 用于遍历值为val的数组元素</span></span><br><span class="line">       <span class="keyword">while</span> (j &lt;= i) &#123;</span><br><span class="line">          <span class="keyword">while</span> (j &lt; nums.length &amp;&amp; nums[j] != val) &#123;</span><br><span class="line">             j ++;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; nums[i] == val) &#123;</span><br><span class="line">             i --;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (j &gt; i) <span class="keyword">break</span>;     <span class="comment">// 防止最后一次交换 i&lt;j 导致等于val的值重新回到新数组中</span></span><br><span class="line">          <span class="comment">// 进行数组元素交换</span></span><br><span class="line">          <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> nums[i];</span><br><span class="line">          nums[i] = nums[j];</span><br><span class="line">          nums[j] = t;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 在循环最后一次j退出循环时 指针j指向了第一个等于val的数组元素的索引处 即为新数组长度</span></span><br><span class="line">       <span class="keyword">return</span> j;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">       <span class="comment">// 使用快慢指针 保持元素的相对顺序一致</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;  <span class="comment">// 从索引为1开始 新数组肯定包含旧数组的第一个元素</span></span><br><span class="line">       <span class="type">int</span> fast;</span><br><span class="line">       <span class="type">int</span> <span class="variable">val</span> <span class="operator">=</span> nums[<span class="number">0</span>]; <span class="comment">// 保留数组第一个元素的值进行 用于判断是否有重复项</span></span><br><span class="line">       <span class="keyword">for</span> (fast = <span class="number">1</span>; fast &lt; nums.length; ++fast) &#123;</span><br><span class="line">          <span class="keyword">if</span> (nums[fast] != val) &#123;</span><br><span class="line">             <span class="comment">// 出现不重复项 保存到新数组中 并更新重复值</span></span><br><span class="line">             val = nums[fast];</span><br><span class="line">             nums[slow++] = val;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 再保存新数组最后一个元素后 slow指针值刚好为新数组的元素个数</span></span><br><span class="line">       <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:40 MB,击败了30.00% 的Java用户</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">第一次提交结果：</span><br><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了27.24% 的Java用户</span><br><span class="line">    内存消耗:43.3 MB,击败了5.07% 的Java用户</span><br><span class="line">第二次提交结果：</span><br><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:43.1 MB,击败了9.89% 的Java用户</span><br></pre></td></tr></table></figure>
+
+<p>对以上代码再进行优化，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">       <span class="comment">// 使用快慢指针 保持元素的相对顺序一致</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;  <span class="comment">// 从索引为1开始 新数组肯定包含旧数组的第一个元素</span></span><br><span class="line">       <span class="type">int</span> fast;</span><br><span class="line">       <span class="keyword">for</span> (fast = <span class="number">1</span>; fast &lt; nums.length; ++fast) &#123;</span><br><span class="line">          <span class="keyword">if</span> (nums[fast] != nums[fast-<span class="number">1</span>]) &#123;</span><br><span class="line">             <span class="comment">// 前项与后项不一致 则说明找到新数组的元素 将其保存到新数组中</span></span><br><span class="line">             nums[slow++] = nums[fast];</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 再保存新数组最后一个元素后 slow指针值刚好为新数组的元素个数</span></span><br><span class="line">       <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>复杂度分析：</p>
 <ul>
-<li>时间复杂度分析：O(n)，即指针<code>i</code>和指针<code>j</code>合计遍历一遍数组</li>
+<li>时间复杂度分析：O(n)</li>
 <li>空间复杂度分析：O(1)</li>
 </ul>
-<p>总结：</p>
-<p>必须要对数组数组交换过程有一个清晰的了解，以及考虑数组只有一个元素时的特殊情况。</p>
+<p>再对以上双指针代码进行优化，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">       <span class="comment">// 使用快慢指针 保持元素的相对顺序一致</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;  <span class="comment">// 从索引为1开始 新数组肯定包含旧数组的第一个元素</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">1</span>; fast &lt; nums.length; ++fast) &#123;</span><br><span class="line">          <span class="keyword">if</span> (nums[fast] != nums[slow-<span class="number">1</span>]) &#123;</span><br><span class="line">              <span class="comment">// 出现与新数组中不重复的项(注意slow-1 才是指向上次添加的新数组元素位置)</span></span><br><span class="line">             <span class="keyword">if</span> (fast-slow &gt; <span class="number">0</span>)        <span class="comment">// 增加一次判断 避免原数组不含有重复项时 重新赋值一遍</span></span><br><span class="line">                nums[slow] = nums[fast];</span><br><span class="line">             slow ++;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 再保存新数组最后一个元素后 slow指针值刚好为新数组的元素个数</span></span><br><span class="line">       <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进行以上优化后，<code>if (fast-slow &gt; 0)</code>才进行赋值的判断，减少了 当数组为<code>[1, 2, 3, 4, 5]</code>这样不含重复项的数组时，重新赋值一遍的赋值开销，同时<code>nums[fast] != nums[slow-1]</code>也显得更加清晰简洁。</p>
 
                 </div>
 
@@ -332,11 +325,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                移除元素_27
+                删除有序数组中的重复项_26
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/11/27/移除元素-27/
+                2023/11/27/删除有序数组中的重复项-26/
             </div>
         </div>
 
@@ -352,7 +345,7 @@
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-11-27 16:05</div>
+                <div class="content">2023-11-27 21:25</div>
             </div>
 
 
@@ -383,22 +376,6 @@
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
                         
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
-                                    </li>
-                                
-                            </ul>
-                        
                     </div>
                     <div>
                         
@@ -410,31 +387,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/27/%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9-26/"
-                                   title="删除有序数组中的重复项_26"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">删除有序数组中的重复项_26</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/27/%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0-367/"
-                                   title="有效的完全平方数_367"
+                                   href="/2023/11/27/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-27/"
+                                   title="移除元素_27"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">有效的完全平方数_367</span>
+                                        <span class="post-nav-title-item text-ellipsis">移除元素_27</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -462,7 +423,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">移除元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9"><span class="nav-number">1.</span> <span class="nav-text">删除有序数组中的重复项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -631,7 +592,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">移除元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9"><span class="nav-number">1.</span> <span class="nav-text">删除有序数组中的重复项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol>
     </div>
 </div>
 
