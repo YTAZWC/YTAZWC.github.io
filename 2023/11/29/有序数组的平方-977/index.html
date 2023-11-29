@@ -9,7 +9,7 @@
     
     <title>
         
-            比较含退格的字符串_844 |
+            有序数组的平方_977 |
         
         花木凋零成兰
     </title>
@@ -186,7 +186,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        比较含退格的字符串_844
+                        有序数组的平方_977
                     </div>
                 
 
@@ -215,13 +215,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-28 22:26:39</span>
-                <span class="mobile">2023-11-28 22:26</span>
+                <span class="pc">2023-11-29 12:14:03</span>
+                <span class="mobile">2023-11-29 12:14</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Nov 29 2023 12:10:01 GMT+0800">2023-11-29 12:10:01</span>
+                <span class="pc" data-updated="Wed Nov 29 2023 13:54:21 GMT+0800">2023-11-29 13:54:21</span>
             </span>
         
 
@@ -244,16 +244,13 @@
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E7%BB%84/">数组</a></li>
+                        
+                    
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A0%88/">栈</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a></li>
                         
                     
                 </ul>
@@ -263,12 +260,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.4k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1k 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
             </span>
         
         
@@ -289,73 +286,65 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="比较含退格的字符串"><a href="#比较含退格的字符串" class="headerlink" title="比较含退格的字符串"></a>比较含退格的字符串</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/backspace-string-compare/description/" >844. 比较含退格的字符串 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
-<p>给定 <code>s</code> 和 <code>t</code> 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 <code>true</code> 。<code>#</code> 代表退格字符。</p>
-<p><strong>注意：</strong>如果对空文本输入退格字符，文本继续为空。</p>
+                    <h1 id="有序数组的平方"><a href="#有序数组的平方" class="headerlink" title="有序数组的平方"></a>有序数组的平方</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/squares-of-a-sorted-array/" >977. 有序数组的平方 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ab#c&quot;, t = &quot;ad#c&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：s 和 t 都会变成 &quot;ac&quot;。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ab##&quot;, t = &quot;c#d#&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：s 和 t 都会变成 &quot;&quot;。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;a#c&quot;, t = &quot;b&quot;</span><br><span class="line">输出：false</span><br><span class="line">解释：s 会变成 &quot;c&quot;，但 t 仍然是 &quot;b&quot;。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= s.length, t.length &lt;= 200</code></li>
-<li><code>s</code> 和 <code>t</code> 只含有小写字母以及字符 <code>&#39;#&#39;</code></li>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
 </ul>
 <p><strong>进阶：</strong></p>
 <ul>
-<li>你可以用 <code>O(n)</code> 的时间复杂度和 <code>O(1)</code> 的空间复杂度解决该问题吗？</li>
+<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
 </ul>
-<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一-模拟"><a href="#解法一-模拟" class="headerlink" title="解法一(模拟)"></a>解法一(模拟)</h2><p>思路分析：</p>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一-双指针"><a href="#解法一-双指针" class="headerlink" title="解法一(双指针)"></a>解法一(双指针)</h2><p>思路分析：</p>
 <ol>
-<li>考虑模拟字符串输入到文本编辑器的操作，对字符串进行修改，模拟退格，将退格后的字符串<code>s</code>和<code>t</code>进行比较</li>
-<li>由于对于字符串<code>s</code>和<code>t</code>的处理，都是相同处理，可以构造一个函数来处理<code>s</code>和<code>t</code>。</li>
-</ol>
-<p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">backspaceCompare</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> buildString(s).equals(buildString(t));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 模拟字符串输入到空白的文本编辑器</span></span><br><span class="line">    <span class="keyword">private</span> String <span class="title function_">buildString</span><span class="params">(String s)</span> &#123;</span><br><span class="line">       <span class="type">StringBuilder</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">       <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; ++ i) &#123;</span><br><span class="line">          <span class="type">char</span> <span class="variable">ch</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">          <span class="keyword">if</span> (ch != <span class="string">&#x27;#&#x27;</span>) &#123;   <span class="comment">// 如果该字符是字母则输入</span></span><br><span class="line">             ans.append(ch);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;   <span class="comment">// 若字符是&#x27;#&#x27;  则回退</span></span><br><span class="line">             <span class="keyword">if</span> (!ans.isEmpty())       <span class="comment">// 不为空时需要回退</span></span><br><span class="line">                ans.deleteCharAt(ans.length()-<span class="number">1</span>);</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> ans.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 2023/11/28 23:36:06    </span><br><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:39.8 MB,击败了11.31% 的Java用户</span><br></pre></td></tr></table></figure>
-
-<p>复杂度分析：</p>
-<ul>
-<li>时间复杂度：O(n+m)，<code>n</code>是字符串<code>s</code>的长度，<code>m</code>是字符串<code>t</code>的长度。</li>
-<li>空间复杂度：O(n+m)，<code>n</code>是字符串<code>s</code>的长度，<code>m</code>是字符串<code>t</code>的长度，主要是函数<code>buildString()</code>返回字符串的消耗，相当于构建新的字符串。</li>
-</ul>
-<h2 id="解法二-双指针"><a href="#解法二-双指针" class="headerlink" title="解法二(双指针)"></a>解法二(双指针)</h2><p>思路分析：</p>
-<ol>
-<li><p>一个字符是否需要被回退，取决于该字符后面是否有退格符(‘#’)，与该字符前面是否有退格符无关，因此可以考虑逆序遍历字符串，便可以在遍历的过程中确定一个字符串是否需要被删除</p>
+<li><p>首先注意题目信息，“<code>nums</code>是非递减顺序的数组”，且包含负数，因为<code>nums</code>内的数组是有一定顺序的，所以可以先找到数组中 负数 和 非负数的分界点。</p>
 </li>
-<li><p>我们可以使用一个变量<code>skip</code>来表示需要删除的字符数量，当我们遍历到一个字符时：</p>
+<li><p>找到分界点后将数组分成了两个数组，指针<code>i</code>由分界点往前遍历数组，指针<code>j</code>由分界点往后遍历数组，最终对于<code>i</code>和<code>j</code>指向的值进行比较。</p>
 <ol>
-<li>如果该字符是‘#’，则需要再多删除一个字符，使<code>skip</code>加1</li>
-<li>若该字符不是退格符，则<ul>
-<li><code>skip == 0</code> 则当前字符不需要删除</li>
-<li><code>skip != 0</code>，则当前字符需要被删除 ，并让<code>skip</code>减1。</li>
-</ul>
-</li>
+<li>若<code>nums[i]*nums[i] &gt; nums[j]*nums[j]</code> 则先将指针<code>j</code>指向的值平方后添加到新数组中，并<code>j++</code>。</li>
+<li>若<code>nums[i]*nums[i] &lt;= nums[j]*nums[j]</code> 则先将指针<code>i</code>指向的值平方后添加到新数组中，并<code>i--</code>。</li>
 </ol>
 </li>
-<li><p>所以可以定义两个指针，分别指向两个字符串末尾，并对两个字符串逆序遍历，然后每遍历一个不需要被删除的字符串则进行比较，直到找到不相等的字符或遍历结束。</p>
+<li><p>在执行完比较后，可能会出现还有元素未添加到新数组的情况，对此进行检验。</p>
 </li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">backspaceCompare</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">lenS</span> <span class="operator">=</span> s.length() - <span class="number">1</span>;    <span class="comment">// 字符串s的长度</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">lenT</span> <span class="operator">=</span> t.length() - <span class="number">1</span>;    <span class="comment">// 字符串t的长度</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">skipS</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 表示逆序遍历过程中 s有多少字符需要被删除</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">skipT</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 表示逆序遍历过程中 t有多少字符需要被删除</span></span><br><span class="line">       <span class="keyword">while</span> (lenS &gt;= <span class="number">0</span> || lenT &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="comment">// 逆序遍历 找出字符串s需要比较的字符</span></span><br><span class="line">          <span class="keyword">while</span> (lenS &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">             <span class="keyword">if</span> (s.charAt(lenS) == <span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">                <span class="comment">// 若字符为回退符</span></span><br><span class="line">                <span class="comment">// 删除数目加一</span></span><br><span class="line">                lenS --;</span><br><span class="line">                skipS ++;</span><br><span class="line">             &#125; <span class="keyword">else</span> &#123;   <span class="comment">// 若字符为普通字符</span></span><br><span class="line">                <span class="keyword">if</span> (skipS &gt; <span class="number">0</span>) &#123;   <span class="comment">// 需要删除</span></span><br><span class="line">                   lenS --;</span><br><span class="line">                   skipS --;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;   <span class="comment">// 不需要删除则退出循环 进行比较</span></span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 逆序遍历 找出字符串t需要比较的字符</span></span><br><span class="line">          <span class="keyword">while</span> (lenT &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">             <span class="keyword">if</span> (t.charAt(lenT) == <span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">                lenT --;</span><br><span class="line">                skipT ++;</span><br><span class="line">             &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (skipT &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                   skipT --;</span><br><span class="line">                   lenT --;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 进行字符比较</span></span><br><span class="line">          <span class="keyword">if</span> (lenT &gt;= <span class="number">0</span> &amp;&amp; lenS &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">             <span class="comment">// 说明字符串均未遍历完 则判断此时指针指向字符是否相等</span></span><br><span class="line">             <span class="keyword">if</span> (s.charAt(lenS) != t.charAt(lenT)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">             &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             <span class="comment">// 当lenT&lt;0 和 lenS&lt;0 同时成立时 说明两个字符串是空串即相等</span></span><br><span class="line">             <span class="keyword">if</span> (lenT &gt;= <span class="number">0</span> || lenS &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 若此时 字符串s或字符串t 中有未遍历完的字符串且另外一条字符串已为空 则说明两个字符串不等</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          lenS --;</span><br><span class="line">          lenT --;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">       <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];  <span class="comment">// 新数组 用于存储排好序后的元素</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 新数组索引</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 从分界处往前遍历的指针</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 从分界处往后遍历的指针</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="comment">// 寻找分界</span></span><br><span class="line">       <span class="keyword">while</span> (k &lt; nums.length &amp;&amp; nums[k] &lt; <span class="number">0</span>)</span><br><span class="line">          k++;</span><br><span class="line">       i = k-<span class="number">1</span>;</span><br><span class="line">       j = k;</span><br><span class="line">       <span class="comment">// 对i和j指向的数组元素进行比较 并添加到数组中</span></span><br><span class="line">       <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &lt; nums.length) &#123;</span><br><span class="line">          <span class="keyword">if</span> (nums[i]*nums[i] &gt; nums[j]*nums[j]) &#123;</span><br><span class="line">             ans[index++] = nums[j]*nums[j];</span><br><span class="line">             j++;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             ans[index++] = nums[i]*nums[i];</span><br><span class="line">             i--;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 将还未添加元素继续添加到新数组中</span></span><br><span class="line">       <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">          ans[index++] = nums[i]*nums[i];</span><br><span class="line">          i --;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (j &lt; nums.length) &#123;</span><br><span class="line">          ans[index++] = nums[j]*nums[j];</span><br><span class="line">          j ++;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:39.7 MB,击败了17.42% 的Java用户</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:44 MB,击败了13.70% 的Java用户</span><br></pre></td></tr></table></figure>
 
 <p>复杂度分析：</p>
 <ul>
-<li>时间复杂度：O(m+n)，需要对字符串s和t进行遍历</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(n)，需要创建一个新数组</li>
+</ul>
+<h2 id="解法二-相向双指针"><a href="#解法二-相向双指针" class="headerlink" title="解法二(相向双指针)"></a>解法二(相向双指针)</h2><p>思路分析：</p>
+<ol>
+<li>根据解法一，可以不寻找负数和非负数的分界点，直接令指针<code>i</code>从0开始遍历，令指针<code>j</code>从数组末端开始遍历，即从最大的数开始添加到新数组中，这样可以避免寻找分界点，也使代码变得更加简介。</li>
+</ol>
+<p>代码实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">       <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];  <span class="comment">// 新数组 用于存储排好序后的元素</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> nums.length-<span class="number">1</span>; <span class="comment">// 新数组索引</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = nums.length-<span class="number">1</span>; i &lt;= j;) &#123;     <span class="comment">// i等于j 保证双向指针相向遍历时相遇的点可以添加到新数组中</span></span><br><span class="line">          <span class="keyword">if</span> (nums[i]*nums[i] &gt; nums[j]*nums[j]) &#123;   <span class="comment">// 选择先添加最大的值</span></span><br><span class="line">             ans[index--] = nums[i]*nums[i];       <span class="comment">// 逆序添加到新数组中</span></span><br><span class="line">             i ++;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             ans[index--] = nums[j]*nums[j];</span><br><span class="line">             j --;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>提交结果如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:43.9 MB,击败了23.22% 的Java用户</span><br></pre></td></tr></table></figure>
+
+<p>复杂度分析：</p>
+<ul>
+<li>时间复杂度：O(n)，会比解法一少 寻找分界点的开销</li>
+<li>空间复杂度：O(n)</li>
 </ul>
 <p>总结：</p>
-<p>在对某些字符串的题目，正序遍历模拟不好做的时候，可以尝试更换思路使用<strong>逆序遍历</strong>，同时对于双指针算法在某个时间点所代表的含义，以及指向的值要有一个清楚的认识，思路要清晰，要熟悉变量每个时刻的变化。</p>
+<p>当对于数组问题或字符串问题，正序可以解决时，或比较难解决时，可以尝试从相反的方向去思考和推导，也许会使问题能够简化。</p>
 
                 </div>
 
@@ -365,11 +354,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                比较含退格的字符串_844
+                有序数组的平方_977
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/11/28/比较含退格的字符串-844/
+                2023/11/29/有序数组的平方-977/
             </div>
         </div>
 
@@ -385,7 +374,7 @@
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-11-28 22:26</div>
+                <div class="content">2023-11-29 12:14</div>
             </div>
 
 
@@ -423,19 +412,15 @@
                                     </li>
                                 
                                     <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A0%88/">栈</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
                                     </li>
                                 
                             </ul>
@@ -451,31 +436,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/29/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9-977/"
-                                   title="有序数组的平方_977"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">有序数组的平方_977</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/28/%E7%A7%BB%E5%8A%A8%E9%9B%B6-283/"
-                                   title="移动零_283"
+                                   href="/2023/11/28/%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-844/"
+                                   title="比较含退格的字符串_844"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">移动零_283</span>
+                                        <span class="post-nav-title-item text-ellipsis">比较含退格的字符串_844</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -503,7 +472,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">比较含退格的字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9"><span class="nav-number">1.</span> <span class="nav-text">有序数组的平方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(双指针)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(相向双指针)</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -672,7 +641,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">比较含退格的字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9"><span class="nav-number">1.</span> <span class="nav-text">有序数组的平方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(双指针)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(相向双指针)</span></a></li></ol></li></ol>
     </div>
 </div>
 
