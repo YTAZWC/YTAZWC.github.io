@@ -456,11 +456,118 @@
 
         
             <div class="pc-post-toc right-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ChatGPT-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">ChatGPT 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT-%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">GPT 架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">图灵测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">模型参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT-3-5"><span class="nav-number">1.4.</span> <span class="nav-text">GPT 3.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT4"><span class="nav-number">1.5.</span> <span class="nav-text">GPT4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81"><span class="nav-number">1.5.1.</span> <span class="nav-text">多模态</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ChatGPT-%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">ChatGPT 的应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E5%AD%A6%E4%B9%A0%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考学习文章</span></a></li></ol>
-    </div>
-</div>
+                .post-toc-wrap {
+  width 100%
+  height 100%
+  overflow-y auto
+  font-size 0.92rem
+
+  &::-webkit-scrollbar-thumb {
+    background var(--toc-scrollbar-color)
+    border-radius 0.3rem
+  }
+
+  &::-webkit-scrollbar-track {
+    background transparent
+  }
+
+  .post-toc {
+
+    ol {
+      position relative
+      box-sizing border-box
+      margin 0
+      text-align left
+      list-style none
+
+      a {
+        transition-property all
+      }
+    }
+
+
+    .nav {
+
+      .nav-item {
+        position relative
+        box-sizing border-box
+        overflow hidden
+        line-height 2
+        white-space nowrap
+        text-overflow ellipsis
+
+
+        &.active {
+          > .nav-child {
+            display block
+          }
+        }
+
+
+        .nav-link {
+          position relative
+          box-sizing border-box
+          padding-left 0.8rem
+
+          &:hover {
+            .nav-number
+            .nav-text {
+              color var(--primary-color)
+            }
+          }
+
+          &.active-current {
+            > .nav-child {
+              display block
+
+              > .nav-item {
+                display block
+              }
+            }
+
+
+            &::before {
+              position absolute
+              top 50%
+              left 0
+              width 0.2rem
+              height 1.2rem
+              background var(--primary-color)
+              border-radius 0.2rem
+              transform translateY(-50%)
+              content ''
+            }
+
+            .nav-number
+            .nav-text {
+              color var(--primary-color)
+            }
+          }
+
+
+          .nav-number
+          .nav-text {
+            color var(--toc-text-color)
+          }
+        }
+
+
+        .nav-child {
+          padding-left 1rem
+
+
+          if (hexo-config('toc') && hexo-config('toc.expand_all') == true) {
+            display block
+          }
+          else {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
+
 
             </div>
         
@@ -539,47 +646,131 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        <div class="side-tools-container border-box ">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
+        $tools-item-width = 2.2rem
+$tools-item-font-size = 1.1rem
+$tools-item-border-radius = 0.2rem
 
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
+.side-tools-show-handle {
+  transform translateX(100%)
+  opacity 0
+  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
 
-        <li class="tools-item tool-toggle-theme-mode flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
+  &.show {
+    transform translateX(0)
+    opacity 1
+  }
+}
 
-        <!-- rss -->
-        
+.side-tools-container {
+  .tools-item {
+    width $tools-item-width
+    height $tools-item-width
+    margin-bottom 0.25rem
+    color var(--text-color-3)
+    font-size $tools-item-font-size
+    background var(--background-color-1)
+    border-right none
+    border-radius $tools-item-border-radius
+    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
+    cursor pointer
 
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
+    i {
+      color var(--text-color-3)
+    }
 
-    <ul class="exposed-tools-list border-box">
-        
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        
+    &:hover {
+      color var(--background-color-1)
+      background var(--primary-color)
+      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
 
-        
+      i {
+        color var(--background-color-1)
+      }
+    }
 
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
 
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
-</div>
+    +keep-tablet() {
+      width $tools-item-width * 0.9
+      height $tools-item-width * 0.9
+      font-size $tools-item-font-size * 0.9
+
+      &.toggle-show-toc-tablet
+      &.go-to-comments-tablet {
+        display flex !important
+      }
+    }
+
+    &.rss {
+
+      a {
+        width 100%
+        height 100%
+        border-radius $tools-item-border-radius
+
+        &:hover {
+          color var(--background-color-1)
+          background var(--primary-color)
+          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+        }
+      }
+    }
+
+    &.toggle-show-toc-tablet
+    &.go-to-comments-tablet {
+      display none
+    }
+  }
+
+
+  .exposed-tools-list {
+
+    .tool-scroll-to-top {
+      display none
+
+      &.show {
+        display flex
+      }
+
+
+      &.show-arrow {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      &.show-percent {
+        .percent {
+          display flex
+        }
+
+        .arrow {
+          display none
+        }
+      }
+
+
+      &:hover {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      .percent {
+        font-size 1rem
+      }
+    }
+  }
+}
 
     </div>
 
@@ -625,11 +816,118 @@
     
         <div class="tablet-post-toc-mask">
             <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ChatGPT-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">ChatGPT 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT-%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">GPT 架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">图灵测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">模型参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT-3-5"><span class="nav-number">1.4.</span> <span class="nav-text">GPT 3.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT4"><span class="nav-number">1.5.</span> <span class="nav-text">GPT4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81"><span class="nav-number">1.5.1.</span> <span class="nav-text">多模态</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ChatGPT-%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">ChatGPT 的应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E5%AD%A6%E4%B9%A0%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考学习文章</span></a></li></ol>
-    </div>
-</div>
+                .post-toc-wrap {
+  width 100%
+  height 100%
+  overflow-y auto
+  font-size 0.92rem
+
+  &::-webkit-scrollbar-thumb {
+    background var(--toc-scrollbar-color)
+    border-radius 0.3rem
+  }
+
+  &::-webkit-scrollbar-track {
+    background transparent
+  }
+
+  .post-toc {
+
+    ol {
+      position relative
+      box-sizing border-box
+      margin 0
+      text-align left
+      list-style none
+
+      a {
+        transition-property all
+      }
+    }
+
+
+    .nav {
+
+      .nav-item {
+        position relative
+        box-sizing border-box
+        overflow hidden
+        line-height 2
+        white-space nowrap
+        text-overflow ellipsis
+
+
+        &.active {
+          > .nav-child {
+            display block
+          }
+        }
+
+
+        .nav-link {
+          position relative
+          box-sizing border-box
+          padding-left 0.8rem
+
+          &:hover {
+            .nav-number
+            .nav-text {
+              color var(--primary-color)
+            }
+          }
+
+          &.active-current {
+            > .nav-child {
+              display block
+
+              > .nav-item {
+                display block
+              }
+            }
+
+
+            &::before {
+              position absolute
+              top 50%
+              left 0
+              width 0.2rem
+              height 1.2rem
+              background var(--primary-color)
+              border-radius 0.2rem
+              transform translateY(-50%)
+              content ''
+            }
+
+            .nav-number
+            .nav-text {
+              color var(--primary-color)
+            }
+          }
+
+
+          .nav-number
+          .nav-text {
+            color var(--toc-text-color)
+          }
+        }
+
+
+        .nav-child {
+          padding-left 1rem
+
+
+          if (hexo-config('toc') && hexo-config('toc.expand_all') == true) {
+            display block
+          }
+          else {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
+
 
             </div>
         </div>
