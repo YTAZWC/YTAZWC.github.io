@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="花木凋零成兰">
+    
+    <title>
+        
+            最小覆盖子串_76 |
+        
+        花木凋零成兰
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/ok.jpg">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"ytaizwc.netlify.app","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"花木凋零成兰","author":"花木凋零成兰","avatar":"/images/ok.jpg","logo":"/images/ok.jpg","favicon":"/images/ok.jpg"},"menu":{"Home":"/","Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"成功始于方法，巩固才能提高。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/YTAZWC","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":"18570354653@163.com"}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":true,"level_badge":true},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":"IqLv4RLENqRWhcOXJdUF7IRL-gzGzoHsz","appkey":"o1VH3cPu7jHlwIuGJMGzIfzk","server_urls":"https://iqlv4rle.lc-cn-n1-shared.com","placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"jsdelivr"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/ok.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               花木凋零成兰
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        最小覆盖子串_76
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/ok.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">花木凋零成兰</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-02 17:28:42</span>
+                <span class="mobile">2023-12-02 17:28</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Dec 03 2023 16:41:20 GMT+0800">2023-12-03 16:41:20</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.1k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="最小覆盖子串"><a href="#最小覆盖子串" class="headerlink" title="最小覆盖子串"></a>最小覆盖子串</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-window-substring/description/" >76. 最小覆盖子串 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+<p>给你一个字符串 <code>s</code> 、一个字符串 <code>t</code> 。返回 <code>s</code> 中涵盖 <code>t</code> 所有字符的最小子串。如果 <code>s</code> 中不存在涵盖 <code>t</code> 所有字符的子串，则返回空字符串 <code>&quot;&quot;</code> 。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>对于 <code>t</code> 中重复字符，我们寻找的子字符串中该字符数量必须不少于 <code>t</code> 中该字符数量。</li>
+<li>如果 <code>s</code> 中存在这样的子串，我们保证它是唯一的答案。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ADOBECODEBANC&quot;, t = &quot;ABC&quot;</span><br><span class="line">输出：&quot;BANC&quot;</span><br><span class="line">解释：最小覆盖子串 &quot;BANC&quot; 包含来自字符串 t 的 &#x27;A&#x27;、&#x27;B&#x27; 和 &#x27;C&#x27;。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;a&quot;, t = &quot;a&quot;</span><br><span class="line">输出：&quot;a&quot;</span><br><span class="line">解释：整个字符串 s 是最小覆盖子串。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;a&quot;, t = &quot;aa&quot;</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: t 中两个字符 &#x27;a&#x27; 均应包含在 s 的子串中，</span><br><span class="line">因此没有符合条件的子字符串，返回空字符串。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>m == s.length</code></li>
+<li><code>n == t.length</code></li>
+<li><code>1 &lt;= m, n &lt;= 10^5</code></li>
+<li><code>s</code> 和 <code>t</code> 由英文字母组成</li>
+</ul>
+<p><strong>进阶：</strong>你能设计一个在 <code>o(m+n)</code> 时间内解决此问题的算法吗？</p>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一-滑动窗口"><a href="#解法一-滑动窗口" class="headerlink" title="解法一(滑动窗口)"></a>解法一(滑动窗口)</h2><p>思路分析：</p>
+<ol>
+<li><p>考虑暴力解法会超时，可以使用滑动窗口来解决，通过移动窗口右边界，寻找包含字符串<code>t</code>的<code>s</code>子串，当找到覆盖<code>t</code>的子串时，再移动左边界，将子串长度减小，直到为覆盖字符串<code>t</code>的最小长度。</p>
+</li>
+<li><p>对于窗口区间确认为<code>[left, right)</code>，即子串长度为<code>right-left</code>，同时<strong>重点需要考虑</strong>的是：**如何确认<code>s</code>的子串是否已经覆盖了字符串<code>t</code>**，先将字符串<code>t</code>包含的字符及其数量进行统计，使用数组<code>tNum</code>进行统计，然后在寻找字串的过程中逐步统计子串中包含的字符及其数量，使用数组<code>sWin</code>进行统计。</p>
+</li>
+<li><p>若直接使用统计的子串字符及数量和<code>t</code>的统计进行对比，也需要进行遍历对比，对时间消耗很大，因此使用一个变量<code>distance</code>来确认子串是否已经包含了<code>t</code>中的字符：</p>
+<ol>
+<li>在移动右边界，当子串增加了一个在<code>t</code>中的字符时，则令<code>distance++</code>，直到在子串中该字符的数目已经等于或大于在<code>t</code>中的字符数目时，该字符不再令<code>dishtance</code>增加。</li>
+<li>因此当<code>distance == t.length()</code>时，则说明子串已经覆盖了字符串<code>t</code></li>
+<li>此时移动左边界，当左边界排除了一个在<code>t</code>中的字符时，若排除该字符前，子串中该字符数目等于<code>t</code>中该字符数目时，即<code>sWin[s.charAt(left)] == tNum[s.charAt(left)]</code>，该字符被排除，说明子串不再完全包含字符串<code>t</code>中字符，令<code>distance--</code></li>
+</ol>
+</li>
+<li><p>使用<code>minLen</code>来记录最小子串长度，使用<code>begin</code>来记录最小子串的起始索引，若<code>minLen</code>等于初始值，则说明不存在子串满足条件，返回空字符串，否则则将满足条件的子串返回。</p>
+</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">minWindow</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">sLen</span> <span class="operator">=</span> s.length();    <span class="comment">// 获取字符串s的长度</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">tLen</span> <span class="operator">=</span> t.length();    <span class="comment">// 获取字符串t的长度</span></span><br><span class="line">       <span class="type">int</span>[] sWin = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">128</span>];    <span class="comment">// 记录字符串s的字符频数</span></span><br><span class="line">       <span class="type">int</span>[] tNum = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">128</span>];    <span class="comment">// 记录字符串t的字符频数</span></span><br><span class="line">       <span class="comment">// 将字符串转化为字符数组</span></span><br><span class="line">       <span class="type">char</span>[] sCharArray = s.toCharArray();</span><br><span class="line">       <span class="comment">// 对 t 中的字符数目 进行统计</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; tLen; ++i) &#123;</span><br><span class="line">          tNum[t.charAt(i)] ++;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 定义窗口左右端点</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="comment">// 记录s最小子串的长度</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">minLen</span> <span class="operator">=</span> Integer.MAX_VALUE;</span><br><span class="line">       <span class="comment">// 记录s最小子串的起始索引</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">begin</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">distance</span> <span class="operator">=</span> <span class="number">0</span>;     <span class="comment">// 用于统计s的子串包含多少字符串t中的字符</span></span><br><span class="line">       <span class="comment">// 定义区间为 [left, right)</span></span><br><span class="line">       <span class="keyword">while</span> (right &lt; sLen) &#123;</span><br><span class="line">          <span class="type">char</span> <span class="variable">chR</span> <span class="operator">=</span> sCharArray[right];</span><br><span class="line">          <span class="keyword">if</span> (tNum[chR] == <span class="number">0</span>) &#123;  <span class="comment">// 当右边界字符不在字符串t中时 直接继续添加下一位字符</span></span><br><span class="line">             <span class="comment">// 该判断可省略</span></span><br><span class="line">             <span class="comment">// 当移动左边界时 可将该字符排除</span></span><br><span class="line">             right++;</span><br><span class="line">             <span class="keyword">continue</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (sWin[chR] &lt; tNum[chR]) &#123;</span><br><span class="line">             <span class="comment">// 当子串中包含该字符数少于字符串t时</span></span><br><span class="line">             <span class="comment">// 即子串保存t中字符数加一</span></span><br><span class="line">             distance++;</span><br><span class="line">          &#125;</span><br><span class="line">          sWin[chR]++; <span class="comment">// 统计该字符</span></span><br><span class="line">          right ++;   <span class="comment">// 移动右指针 保证窗口区间为 [left, right)</span></span><br><span class="line">          <span class="keyword">while</span> (distance == tLen) &#123; <span class="comment">// 当s的子串包含字符串t的所有字符时 左边界开始移动</span></span><br><span class="line">             <span class="comment">// 此时窗口区间为[left, right) 则窗口长度为 right-left</span></span><br><span class="line">             <span class="keyword">if</span> (right -left &lt; minLen) &#123;</span><br><span class="line">                minLen = right - left;</span><br><span class="line">                begin = left;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="type">char</span> <span class="variable">chL</span> <span class="operator">=</span> sCharArray[left];</span><br><span class="line">             <span class="keyword">if</span> (tNum[chL] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 字符串t不包含该字符 直接移动</span></span><br><span class="line">                <span class="comment">// 该判断可省略 与右边界移动循环判断处对应</span></span><br><span class="line">                left ++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">if</span> (sWin[chL] == tNum[chL]) &#123;</span><br><span class="line">                distance --;   <span class="comment">// 左边界移动导致子串不再完全包含字符串t中的字符</span></span><br><span class="line">             &#125;</span><br><span class="line">             sWin[chL] --;  <span class="comment">// 排除该字符</span></span><br><span class="line">             left ++;   <span class="comment">// 移动左边界</span></span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> (minLen == Integer.MAX_VALUE)</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;    <span class="comment">// 若minLen未发生改变 则没有符合条件的子串</span></span><br><span class="line">       <span class="keyword">return</span> s.substring(begin, begin+minLen);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>提交结果如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:2 ms,击败了99.00% 的Java用户</span><br><span class="line">    内存消耗:43 MB,击败了64.23% 的Java用户</span><br></pre></td></tr></table></figure>
+
+<p>复杂度分析：</p>
+<ul>
+<li><p>时间复杂度分析：O(|S| + |T|)，首先需要遍历字符串<code>t</code>，统计其中字符及数量，然后窗口左右边界最极端情况下需要各自遍历一遍，同时将字符串<code>s</code>转换为字符串数组，函数内部需要遍历一次。</p>
+</li>
+<li><p>空间复杂度分析：O(|S| + |T|)</p>
+</li>
+</ul>
+<h3 id="优化-哈希表"><a href="#优化-哈希表" class="headerlink" title="优化(+哈希表)"></a>优化(+哈希表)</h3><p>优化思路：</p>
+<ol>
+<li>首先考虑字符频数数组，我们可以使用哈希表来统计字符频数，可以省略部分时间和空间，</li>
+<li>同时可以省略一些判断，让代码更加简洁，但是这会增加对于哈希表的操作(此处未省略)</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">minWindow</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">sLen</span> <span class="operator">=</span> s.length();    <span class="comment">// 字符串s的长度</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">tLen</span> <span class="operator">=</span> t.length();        <span class="comment">// 字符串t的长度</span></span><br><span class="line">       HashMap&lt;Character, Integer&gt; tHash = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();   <span class="comment">// 记录字符串t的字符频数</span></span><br><span class="line">       HashMap&lt;Character, Integer&gt; sHash = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();   <span class="comment">// 记录字符串s的字符频数</span></span><br><span class="line">       <span class="comment">// 先对字符t进行统计</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; tLen; ++i) &#123;</span><br><span class="line">          <span class="type">char</span> <span class="variable">ch</span> <span class="operator">=</span> t.charAt(i);</span><br><span class="line">          tHash.put(ch, tHash.getOrDefault(ch, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">// 定义窗口左边界</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">minLen</span> <span class="operator">=</span> Integer.MAX_VALUE;       <span class="comment">// 用于记录更新最小子串长度</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">begin</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 记录最小子串起始索引</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">distance</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">// 记录子串包含字符串t字符的字符数</span></span><br><span class="line">       <span class="comment">// 使用for循环代替while 更简洁 但是需要注意窗口区间 变化</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> <span class="number">0</span>; right &lt; sLen; ++right) &#123;</span><br><span class="line">          <span class="type">char</span> <span class="variable">chR</span> <span class="operator">=</span> s.charAt(right);</span><br><span class="line">          <span class="keyword">if</span> (!tHash.containsKey(chR))</span><br><span class="line">             <span class="keyword">continue</span>;  <span class="comment">// 可以减少很多不必要的比较和操作</span></span><br><span class="line">          <span class="keyword">if</span> (sHash.getOrDefault(chR, <span class="number">0</span>) &lt; tHash.get(chR)) &#123;</span><br><span class="line">             ++ distance;</span><br><span class="line">          &#125;</span><br><span class="line">          sHash.put(chR, sHash.getOrDefault(chR, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">          <span class="keyword">while</span> (distance == tLen) &#123;</span><br><span class="line">             <span class="comment">// 此时窗口区间为[left, right]</span></span><br><span class="line">             <span class="keyword">if</span> (right-left+<span class="number">1</span> &lt; minLen) &#123;</span><br><span class="line">                minLen = right - left + <span class="number">1</span>;</span><br><span class="line">                begin = left;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="type">char</span> <span class="variable">chL</span> <span class="operator">=</span> s.charAt(left);</span><br><span class="line">             <span class="keyword">if</span> (!tHash.containsKey(chL)) &#123; <span class="comment">// 若字符不在t中 则跳过记录到哈希中的步骤</span></span><br><span class="line">                left ++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">if</span> (sHash.getOrDefault(chL, <span class="number">0</span>).equals(tHash.get(chL))) &#123;</span><br><span class="line">                <span class="comment">// 注意此处判断不能使用 ==</span></span><br><span class="line">                <span class="comment">// 因为Integer引用类型变量   ==比较的是引用而非内容</span></span><br><span class="line">                -- distance;</span><br><span class="line">             &#125;</span><br><span class="line">             sHash.put(chL, sHash.getOrDefault(chL, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">             left ++;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> (minLen == Integer.MAX_VALUE) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">       <span class="keyword">return</span> s.substring(begin, begin+minLen);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>提交结果如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:13 ms,击败了70.19% 的Java用户</span><br><span class="line">    内存消耗:43.6 MB,击败了13.80% 的Java用户</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<p>对于一个字符串是否包含另外一个字符串，在不需要考虑字符之间顺序的情况下，可以使用一个变量<code>distance</code>来记录，每当子串中多一个属于<code>t</code>的字符，让<code>distance+1</code>，当<code>distance == t.length()</code>时，即说明此时已包含字符串<code>t</code>，当然对于<code>distance</code>的增加，也需要考虑每个字符对应的数量，相等时不用再让<code>distance+1</code>，但仍需记录下该字符的数目，即<code>sWin[chR]++</code>，便于将该字符排除时不会误判。</p>
+
+                </div>
+
+                
+                        
+<div class="article-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="post-title border-box text-ellipsis">
+                最小覆盖子串_76
+            </div>
+
+            <div class="post-link border-box text-ellipsis">
+                2023/12/02/最小覆盖子串-76/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">花木凋零成兰</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2023-12-02 17:28</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/12/01/%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE-904/"
+                                   title="水果成篮_904"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">水果成篮_904</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">最小覆盖子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(滑动窗口)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.1.1.</span> <span class="nav-text">优化(+哈希表)</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">花木凋零成兰</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">最小覆盖子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(滑动窗口)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.1.1.</span> <span class="nav-text">优化(+哈希表)</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/toggle-theme.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/code-block.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/local-search.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/lazyload.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/post/copyright-info.js"></script>
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.0/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
