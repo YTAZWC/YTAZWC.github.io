@@ -32,7 +32,11 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -283,31 +287,30 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="有效的完全平方数"><a href="#有效的完全平方数" class="headerlink" title="有效的完全平方数"></a>有效的完全平方数</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-perfect-square/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
+                    <h1 id="有效的完全平方数"><a class="markdownIt-Anchor" href="#有效的完全平方数"></a> 有效的完全平方数</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-perfect-square/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
 <p>给你一个正整数 <code>num</code> 。如果 <code>num</code> 是一个完全平方数，则返回 <code>true</code> ，否则返回 <code>false</code> 。</p>
 <p><strong>完全平方数</strong> 是一个可以写成某个整数的平方的整数。换句话说，它可以写成某个整数和自身的乘积。</p>
 <p>不能使用任何内置的库函数，如 <code>sqrt</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：num = 16</span><br><span class="line">输出：true</span><br><span class="line">解释：返回 true ，因为 4 * 4 = 16 且 4 是一个整数。</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：num = 14</span><br><span class="line">输出：false</span><br><span class="line">解释：返回 false ，因为 3.742 * 3.742 = 14 但 3.742 不是一个整数。</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= num &lt;= 23^1 - 1</code></li>
 </ul>
-<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>思路分析：</p>
+<h1 id="解题"><a class="markdownIt-Anchor" href="#解题"></a> 解题</h1>
+<h2 id="解法一"><a class="markdownIt-Anchor" href="#解法一"></a> 解法一</h2>
+<p>思路分析：</p>
 <ol>
 <li>根据题目<code>1&lt;=num&lt;=2^31-1</code>，得使用暴力求解循环遍历会超时，所以考虑使用二分寻找<code>num</code>的平方根</li>
 <li>通过二分求出对应的平方根后，进行检验，如果满足<code>x*x = num</code>则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ol>
 <p>实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPerfectSquare</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (num == <span class="number">1</span>)</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span>;   <span class="comment">// 因为 1 是一个完全平方数 直接返回true</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> num / <span class="number">2</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span> (start &lt;= end) &#123;    <span class="comment">// 使用左闭右闭的二分写法</span></span><br><span class="line">          <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> ((end - start) &gt;&gt; <span class="number">1</span>) + start;</span><br><span class="line">          <span class="keyword">if</span> ((<span class="type">long</span>)mid*mid &lt;= num) &#123;</span><br><span class="line">             <span class="comment">// 当mid*mid == num 时 保存算术平方根</span></span><br><span class="line">             <span class="comment">// 若num的算术平方根含有小数 则ans 记录算术平方根向下取整 的值</span></span><br><span class="line">             ans = mid;</span><br><span class="line">             start = mid + <span class="number">1</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             <span class="comment">// 算术平方根在左区间 则将右端点缩小</span></span><br><span class="line">             end = mid - <span class="number">1</span>;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> ans*ans == num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>提交结果如下：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:38.5 MB,击败了5.02% 的Java用户</span><br></pre></td></tr></table></figure>
-
 <p>复杂度分析：</p>
 <ul>
 <li>时间复杂度： O(log num)</li>
@@ -452,7 +455,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">有效的完全平方数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> 有效的完全平方数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -621,7 +624,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">有效的完全平方数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> 有效的完全平方数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一</span></a></li></ol></li></ol>
     </div>
 </div>
 

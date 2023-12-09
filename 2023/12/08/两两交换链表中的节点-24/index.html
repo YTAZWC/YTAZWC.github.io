@@ -32,7 +32,11 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -257,7 +261,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>823 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>820 字</span>
             </span>
         
         
@@ -283,63 +287,74 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/" >24. 两两交换链表中的节点 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+                    <h1 id="两两交换链表中的节点"><a class="markdownIt-Anchor" href="#两两交换链表中的节点"></a> 两两交换链表中的节点</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/" >24. 两两交换链表中的节点 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
 <p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
 <p><strong>示例 1：</strong></p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg"
-                     
+                      alt="" 
                 ></p>
-<p><strong>输入：</strong> head &#x3D; [1,2,3,4]<br><strong>输出：</strong>[2,1,4,3]</p>
+<p><strong>输入：</strong> head = [1,2,3,4]<br />
+<strong>输出：</strong>[2,1,4,3]</p>
 <p><strong>示例 2：</strong></p>
-<p><strong>输入：</strong> head &#x3D; []<br><strong>输出：</strong>[]</p>
+<p><strong>输入：</strong> head = []<br />
+<strong>输出：</strong>[]</p>
 <p><strong>示例 3：</strong></p>
-<p><strong>输入：</strong> head &#x3D; [1]<br><strong>输出：</strong>[1]</p>
+<p><strong>输入：</strong> head = [1]<br />
+<strong>输出：</strong>[1]</p>
 <p><strong>提示：</strong></p>
 <ul>
 <li>链表中节点的数目在范围 <code>[0, 100]</code> 内</li>
 <li><code>0 &lt;= Node.val &lt;= 100</code></li>
 </ul>
-<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一-双指针迭代"><a href="#解法一-双指针迭代" class="headerlink" title="解法一(双指针迭代)"></a>解法一(双指针迭代)</h2><p>思路分析：</p>
+<h1 id="解题"><a class="markdownIt-Anchor" href="#解题"></a> 解题</h1>
+<h2 id="解法一双指针迭代"><a class="markdownIt-Anchor" href="#解法一双指针迭代"></a> 解法一(双指针迭代)</h2>
+<p>思路分析：</p>
 <ol>
-<li><p>考虑使用双指针，使用双指针遍历链表，并对双指针指向的链表节点进行交换</p>
+<li>
+<p>考虑使用双指针，使用双指针遍历链表，并对双指针指向的链表节点进行交换</p>
 </li>
-<li><p>指针<code>p</code>指向交换的第一个节点，指针<code>q</code>指向交换的第二个节点</p>
+<li>
+<p>指针<code>p</code>指向交换的第一个节点，指针<code>q</code>指向交换的第二个节点</p>
 </li>
-<li><p>先将<code>q</code>指向的下一个节点赋值给<code>p</code>的下一个节点，再让<code>q</code>的下一个节点指向<code>p</code>完成交换</p>
+<li>
+<p>先将<code>q</code>指向的下一个节点赋值给<code>p</code>的下一个节点，再让<code>q</code>的下一个节点指向<code>p</code>完成交换</p>
 </li>
-<li><p>需要注意，使用一个指针<code>pre</code>标记新链表的末尾，将交换好的一组节点与新链表进行链接</p>
+<li>
+<p>需要注意，使用一个指针<code>pre</code>标记新链表的末尾，将交换好的一组节点与新链表进行链接</p>
 </li>
 </ol>
 <p>实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">swapPairs</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 空链表或链表中只有一个节点 无需交换</span></span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">p</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">q</span> <span class="operator">=</span> head.next;</span><br><span class="line">        head = q;    <span class="comment">// 此时头节点更新为原链表的第二节点</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span> (q != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 进行节点交换</span></span><br><span class="line">            p.next = q.next;</span><br><span class="line">            q.next = p;</span><br><span class="line">            <span class="comment">// 将交换好的一组节点与 已交换好的链表链接</span></span><br><span class="line">            <span class="keyword">if</span> (pre != <span class="literal">null</span>)</span><br><span class="line">                pre.next = q;</span><br><span class="line">            <span class="comment">// 更新交换好的新链表的尾节点</span></span><br><span class="line">            pre = p;</span><br><span class="line">            <span class="comment">// 交换一组节点后 移动双指针</span></span><br><span class="line">            p = p.next;</span><br><span class="line">            <span class="keyword">if</span> (p == <span class="literal">null</span>) <span class="comment">// 若此时已移动到末尾则退出循环</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            q = p.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>提交结果如下：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:39.4 MB,击败了9.03% 的Java用户</span><br></pre></td></tr></table></figure>
-
 <p>复杂度分析：</p>
 <ul>
-<li><p>时间复杂度：O(n)，需要遍历链表</p>
+<li>
+<p>时间复杂度：O(n)，需要遍历链表</p>
 </li>
-<li><p>空间复杂度：O(1)，声明使用了常量级变量</p>
+<li>
+<p>空间复杂度：O(1)，声明使用了常量级变量</p>
 </li>
 </ul>
-<h2 id="解法二-递归"><a href="#解法二-递归" class="headerlink" title="解法二(递归)"></a>解法二(递归)</h2><p>思路分析：</p>
+<h2 id="解法二递归"><a class="markdownIt-Anchor" href="#解法二递归"></a> 解法二(递归)</h2>
+<p>思路分析：</p>
 <ol>
 <li>实现递归，主要根据解法一双指针迭代来进行，即创建一个新的递归函数，并根据解法一中循环的边界条件，以及迭代的规律来推导递归函数中的规律。</li>
 </ol>
 <p>实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">swapPairs</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 空链表或链表中只有一个节点 无需交换</span></span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 根据链表交换规律 交换后新链表的头节点为head.next</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">newHead</span> <span class="operator">=</span> head.next;    <span class="comment">// 暂时先记录新链表的头节点</span></span><br><span class="line">        swapListNode(head, head.next, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> newHead;    <span class="comment">// 交换完成后 返回新链表</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">swapListNode</span><span class="params">(ListNode p, ListNode q, ListNode pre)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (q == <span class="literal">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">        <span class="comment">// 进行交换</span></span><br><span class="line">        p.next = q.next;</span><br><span class="line">        q.next = p;</span><br><span class="line">        <span class="comment">// 进行链接</span></span><br><span class="line">        <span class="keyword">if</span> (pre != <span class="literal">null</span>)</span><br><span class="line">            pre.next = q;</span><br><span class="line">        <span class="comment">// 继续交换</span></span><br><span class="line">        <span class="keyword">if</span> (p.next == <span class="literal">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">        swapListNode(p.next, p.next.next, p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>提交结果如下：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:39.5 MB,击败了5.70% 的Java用户</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><p>时间复杂度：O(n)，需要遍历链表</p>
+<li>
+<p>时间复杂度：O(n)，需要遍历链表</p>
 </li>
-<li><p>空间复杂度：O(1)，声明使用了常量级变量</p>
+<li>
+<p>空间复杂度：O(1)，声明使用了常量级变量</p>
 </li>
 </ul>
 
@@ -481,7 +496,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">两两交换链表中的节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E5%8F%8C%E6%8C%87%E9%92%88%E8%BF%AD%E4%BB%A3"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(双指针迭代)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E9%80%92%E5%BD%92"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(递归)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text"> 两两交换链表中的节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%8F%8C%E6%8C%87%E9%92%88%E8%BF%AD%E4%BB%A3"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(双指针迭代)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%80%92%E5%BD%92"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(递归)</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -650,7 +665,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">两两交换链表中的节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E5%8F%8C%E6%8C%87%E9%92%88%E8%BF%AD%E4%BB%A3"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(双指针迭代)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E9%80%92%E5%BD%92"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(递归)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text"> 两两交换链表中的节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%8F%8C%E6%8C%87%E9%92%88%E8%BF%AD%E4%BB%A3"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(双指针迭代)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%80%92%E5%BD%92"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(递归)</span></a></li></ol></li></ol>
     </div>
 </div>
 

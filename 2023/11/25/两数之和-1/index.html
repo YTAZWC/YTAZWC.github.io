@@ -32,7 +32,11 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -283,19 +287,17 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/description/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
+                    <h1 id="两数之和"><a class="markdownIt-Anchor" href="#两数之和"></a> 两数之和</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/description/" >原题链接<i class="fas fa-external-link-alt"></i></a></p>
 <p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
 <p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
 <p>你可以按任意顺序返回答案。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line">输出：[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">解释：因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] == <span class="number">9</span> ，返回 [<span class="number">0</span>, <span class="number">1</span>] 。</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>], target = <span class="number">6</span></span><br><span class="line">输出：[<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 3：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">3</span>,<span class="number">3</span>], target = <span class="number">6</span></span><br><span class="line">输出：[<span class="number">0</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>2 &lt;= nums.length &lt;= 104</code></li>
@@ -303,24 +305,28 @@
 <li><code>-109 &lt;= target &lt;= 109</code></li>
 <li><strong>只会存在一个有效答案</strong></li>
 </ul>
-<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><ol>
-<li><p>首先我们可以先将数组元素存储到哈希表中</p>
+<h1 id="解题"><a class="markdownIt-Anchor" href="#解题"></a> 解题</h1>
+<ol>
+<li>
+<p>首先我们可以先将数组元素存储到哈希表中</p>
 </li>
-<li><p>然后对数组进行遍历</p>
+<li>
+<p>然后对数组进行遍历</p>
 </li>
-<li><p>每遍历一个元素，就查询哈希表中是否具有对应的值num，使<code>num+nums[i] = target</code>成立</p>
+<li>
+<p>每遍历一个元素，就查询哈希表中是否具有对应的值num，使<code>num+nums[i] = target</code>成立</p>
 </li>
-<li><p>且查询到的值的索引不能与当前遍历的数组元素的索引相同</p>
+<li>
+<p>且查询到的值的索引不能与当前遍历的数组元素的索引相同</p>
 </li>
-<li><p>若满足条件则退出循环，并返回结果</p>
+<li>
+<p>若满足条件则退出循环，并返回结果</p>
 </li>
 </ol>
 <p>具体代码实现如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="comment">// 创建哈希表存储数组元素</span></span><br><span class="line">        HashMap&lt;Integer, Integer&gt; numHash = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;    <span class="comment">// 记录数组长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 将数组元素存储到哈希表中</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            numHash.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 通过遍历数组元素，并查询哈希表找出对应的另一个整数</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (numHash.containsKey(num) &amp;&amp; numHash.get(num) != i) &#123;</span><br><span class="line">                j = numHash.get(num);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, j&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>提交结果如下所示：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:4 ms,击败了53.42% 的Java用户</span><br><span class="line">    内存消耗:43 MB,击败了5.00% 的Java用户</span><br></pre></td></tr></table></figure>
-
 <p><strong>进一步优化，思路如下：</strong></p>
 <ol>
 <li>首先关于如何查询 数组中存在的另一个满足条件的元素 <code>target-num[i]</code> 时间复杂度为O(1)，无法再进行优化</li>
@@ -329,7 +335,6 @@
 </ol>
 <p>代码实现如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; numHash = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (numHash.containsKey(num)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, numHash.get(num)&#125;;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                numHash.put(nums[i], i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>我们对于每一个<code>nums[i]</code>先查询表中是否存在<code>target - nums[i]</code>：</p>
 <ul>
 <li>若不存在，则说明对应的<code>target - nums[i]</code>要么不在数组中；要么在数组中，只是还未插入哈希表中，因此可将该元素插入到哈希表中，在后续遍历到值为<code>target - nums[i]</code>的数组元素时，即可获得最终结果。</li>
@@ -338,7 +343,6 @@
 <p><strong>使用如上方法，不但减少时间复杂度以及对空间的损耗，还可以避免查询到的<code>target - nums[i]</code>与自身<code>nums[i]</code>匹配。</strong></p>
 <p>提交结果如下所示：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了99.55% 的Java用户</span><br><span class="line">    内存消耗:42.5 MB,击败了63.87% 的Java用户</span><br></pre></td></tr></table></figure>
-
 
                 </div>
 
@@ -478,7 +482,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text">两数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text"> 两数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a></li></ol>
     </div>
 </div>
 
@@ -647,7 +651,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text">两数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text"> 两数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a></li></ol>
     </div>
 </div>
 

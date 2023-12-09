@@ -32,7 +32,11 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -286,14 +290,13 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="有序数组的平方"><a href="#有序数组的平方" class="headerlink" title="有序数组的平方"></a>有序数组的平方</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/squares-of-a-sorted-array/" >977. 有序数组的平方 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
+                    <h1 id="有序数组的平方"><a class="markdownIt-Anchor" href="#有序数组的平方"></a> 有序数组的平方</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/squares-of-a-sorted-array/" >977. 有序数组的平方 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
 <p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 104</code></li>
@@ -304,40 +307,42 @@
 <ul>
 <li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
 </ul>
-<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="解法一-双指针"><a href="#解法一-双指针" class="headerlink" title="解法一(双指针)"></a>解法一(双指针)</h2><p>思路分析：</p>
+<h1 id="解题"><a class="markdownIt-Anchor" href="#解题"></a> 解题</h1>
+<h2 id="解法一双指针"><a class="markdownIt-Anchor" href="#解法一双指针"></a> 解法一(双指针)</h2>
+<p>思路分析：</p>
 <ol>
-<li><p>首先注意题目信息，“<code>nums</code>是非递减顺序的数组”，且包含负数，因为<code>nums</code>内的数组是有一定顺序的，所以可以先找到数组中 负数 和 非负数的分界点。</p>
+<li>
+<p>首先注意题目信息，“<code>nums</code>是非递减顺序的数组”，且包含负数，因为<code>nums</code>内的数组是有一定顺序的，所以可以先找到数组中 负数 和 非负数的分界点。</p>
 </li>
-<li><p>找到分界点后将数组分成了两个数组，指针<code>i</code>由分界点往前遍历数组，指针<code>j</code>由分界点往后遍历数组，最终对于<code>i</code>和<code>j</code>指向的值进行比较。</p>
+<li>
+<p>找到分界点后将数组分成了两个数组，指针<code>i</code>由分界点往前遍历数组，指针<code>j</code>由分界点往后遍历数组，最终对于<code>i</code>和<code>j</code>指向的值进行比较。</p>
 <ol>
 <li>若<code>nums[i]*nums[i] &gt; nums[j]*nums[j]</code> 则先将指针<code>j</code>指向的值平方后添加到新数组中，并<code>j++</code>。</li>
 <li>若<code>nums[i]*nums[i] &lt;= nums[j]*nums[j]</code> 则先将指针<code>i</code>指向的值平方后添加到新数组中，并<code>i--</code>。</li>
 </ol>
 </li>
-<li><p>在执行完比较后，可能会出现还有元素未添加到新数组的情况，对此进行检验。</p>
+<li>
+<p>在执行完比较后，可能会出现还有元素未添加到新数组的情况，对此进行检验。</p>
 </li>
 </ol>
 <p>实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">       <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];  <span class="comment">// 新数组 用于存储排好序后的元素</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 新数组索引</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 从分界处往前遍历的指针</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 从分界处往后遍历的指针</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="comment">// 寻找分界</span></span><br><span class="line">       <span class="keyword">while</span> (k &lt; nums.length &amp;&amp; nums[k] &lt; <span class="number">0</span>)</span><br><span class="line">          k++;</span><br><span class="line">       i = k-<span class="number">1</span>;</span><br><span class="line">       j = k;</span><br><span class="line">       <span class="comment">// 对i和j指向的数组元素进行比较 并添加到数组中</span></span><br><span class="line">       <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &lt; nums.length) &#123;</span><br><span class="line">          <span class="keyword">if</span> (nums[i]*nums[i] &gt; nums[j]*nums[j]) &#123;</span><br><span class="line">             ans[index++] = nums[j]*nums[j];</span><br><span class="line">             j++;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             ans[index++] = nums[i]*nums[i];</span><br><span class="line">             i--;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 将还未添加元素继续添加到新数组中</span></span><br><span class="line">       <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">          ans[index++] = nums[i]*nums[i];</span><br><span class="line">          i --;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (j &lt; nums.length) &#123;</span><br><span class="line">          ans[index++] = nums[j]*nums[j];</span><br><span class="line">          j ++;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>提交结果如下：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:44 MB,击败了13.70% 的Java用户</span><br></pre></td></tr></table></figure>
-
 <p>复杂度分析：</p>
 <ul>
 <li>时间复杂度：O(n)</li>
 <li>空间复杂度：O(n)，需要创建一个新数组</li>
 </ul>
-<h2 id="解法二-相向双指针"><a href="#解法二-相向双指针" class="headerlink" title="解法二(相向双指针)"></a>解法二(相向双指针)</h2><p>思路分析：</p>
+<h2 id="解法二相向双指针"><a class="markdownIt-Anchor" href="#解法二相向双指针"></a> 解法二(相向双指针)</h2>
+<p>思路分析：</p>
 <ol>
 <li>根据解法一，可以不寻找负数和非负数的分界点，直接令指针<code>i</code>从0开始遍历，令指针<code>j</code>从数组末端开始遍历，即从最大的数开始添加到新数组中，这样可以避免寻找分界点，也使代码变得更加简介。</li>
 </ol>
 <p>代码实现如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">       <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];  <span class="comment">// 新数组 用于存储排好序后的元素</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> nums.length-<span class="number">1</span>; <span class="comment">// 新数组索引</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = nums.length-<span class="number">1</span>; i &lt;= j;) &#123;     <span class="comment">// i等于j 保证双向指针相向遍历时相遇的点可以添加到新数组中</span></span><br><span class="line">          <span class="keyword">if</span> (nums[i]*nums[i] &gt; nums[j]*nums[j]) &#123;   <span class="comment">// 选择先添加最大的值</span></span><br><span class="line">             ans[index--] = nums[i]*nums[i];       <span class="comment">// 逆序添加到新数组中</span></span><br><span class="line">             i ++;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             ans[index--] = nums[j]*nums[j];</span><br><span class="line">             j --;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>提交结果如下：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:43.9 MB,击败了23.22% 的Java用户</span><br></pre></td></tr></table></figure>
-
 <p>复杂度分析：</p>
 <ul>
 <li>时间复杂度：O(n)，会比解法一少 寻找分界点的开销</li>
@@ -488,7 +493,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9"><span class="nav-number">1.</span> <span class="nav-text">有序数组的平方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(双指针)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(相向双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9"><span class="nav-number">1.</span> <span class="nav-text"> 有序数组的平方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(双指针)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(相向双指针)</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -657,7 +662,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9"><span class="nav-number">1.</span> <span class="nav-text">有序数组的平方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.1.</span> <span class="nav-text">解法一(双指针)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">解法二(相向双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9"><span class="nav-number">1.</span> <span class="nav-text"> 有序数组的平方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(双指针)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(相向双指针)</span></a></li></ol></li></ol>
     </div>
 </div>
 

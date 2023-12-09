@@ -32,7 +32,11 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -280,192 +284,207 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><p>Markdown 是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档。</p>
-<h1 id="主要语法："><a href="#主要语法：" class="headerlink" title="主要语法："></a>主要语法：</h1><h2 id="Markdown-标题"><a href="#Markdown-标题" class="headerlink" title="Markdown 标题"></a>Markdown 标题</h2><p>使用 <code>#</code> 来标记标题语法格式：</p>
+                    <h1 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介：</h1>
+<p>Markdown 是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档。</p>
+<h1 id="主要语法"><a class="markdownIt-Anchor" href="#主要语法"></a> 主要语法：</h1>
+<h2 id="markdown-标题"><a class="markdownIt-Anchor" href="#markdown-标题"></a> Markdown 标题</h2>
+<p>使用 <code>#</code> 来标记标题语法格式：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-
 <p>请注意以上 “一级标题” 与 “#” 之间的空格。</p>
 <p>效果示例如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700566253048.webp"
-                      alt="1700566253048"
+                      alt="1700566253048" 
                 ></p>
-<h2 id="Markdown-段落"><a href="#Markdown-段落" class="headerlink" title="Markdown 段落"></a>Markdown 段落</h2><p>Markdown段落没有特殊格式，段落的换行号是：使用两个以上的空格加回车。</p>
-<h2 id="Markdown-字体及样式"><a href="#Markdown-字体及样式" class="headerlink" title="Markdown 字体及样式"></a>Markdown 字体及样式</h2><h3 id="斜体、粗体、粗斜体"><a href="#斜体、粗体、粗斜体" class="headerlink" title="斜体、粗体、粗斜体"></a>斜体、粗体、粗斜体</h3><p>以下使用<code>*</code>来标识斜体、粗体或粗斜体，且<code>*</code>可以被<code>_</code>下划线代替：</p>
+<h2 id="markdown-段落"><a class="markdownIt-Anchor" href="#markdown-段落"></a> Markdown 段落</h2>
+<p>Markdown段落没有特殊格式，段落的换行号是：使用两个以上的空格加回车。</p>
+<h2 id="markdown-字体及样式"><a class="markdownIt-Anchor" href="#markdown-字体及样式"></a> Markdown 字体及样式</h2>
+<h3 id="斜体-粗体-粗斜体"><a class="markdownIt-Anchor" href="#斜体-粗体-粗斜体"></a> 斜体、粗体、粗斜体</h3>
+<p>以下使用<code>*</code>来标识斜体、粗体或粗斜体，且<code>*</code>可以被<code>_</code>下划线代替：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*斜体文字*</span></span><br><span class="line"><span class="strong">**粗体文字**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体文字*</span>**</span></span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700567093411.webp"
-                      alt="1700567093411"
+                      alt="1700567093411" 
                 ></p>
-<h3 id="文字添加下划线"><a href="#文字添加下划线" class="headerlink" title="文字添加下划线"></a>文字添加下划线</h3><p>下划线主要通过HTML的标签来实现：</p>
+<h3 id="文字添加下划线"><a class="markdownIt-Anchor" href="#文字添加下划线"></a> 文字添加下划线</h3>
+<p>下划线主要通过HTML的标签来实现：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">u</span>&gt;</span>带下划线的文本<span class="tag">&lt;/<span class="name">u</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700567459499.webp"
-                      alt="1700567459499"
+                      alt="1700567459499" 
                 ></p>
-<h3 id="文字显示删除线"><a href="#文字显示删除线" class="headerlink" title="文字显示删除线"></a>文字显示删除线</h3><p>通过在文字的两端添加两个波浪线 <code>~</code> 来显示，语法格式如下：</p>
+<h3 id="文字显示删除线"><a class="markdownIt-Anchor" href="#文字显示删除线"></a> 文字显示删除线</h3>
+<p>通过在文字的两端添加两个波浪线 <code>~</code> 来显示，语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~添加删除线的文字~~</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700567687154.webp"
-                      alt="1700567687154"
+                      alt="1700567687154" 
                 ></p>
-<h3 id="文字添加脚注"><a href="#文字添加脚注" class="headerlink" title="文字添加脚注"></a>文字添加脚注</h3><p>脚注是对文本的补充说明，语法格式如下：</p>
+<h3 id="文字添加脚注"><a class="markdownIt-Anchor" href="#文字添加脚注"></a> 文字添加脚注</h3>
+<p>脚注是对文本的补充说明，语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">被脚注说明的文字[^脚注描述性文字]</span><br><span class="line"></span><br><span class="line">[<span class="symbol">^脚注描述性文字</span>]: <span class="link">对需要被说明的文字进行说明</span></span><br></pre></td></tr></table></figure>
-
 <p>注意：“脚注描述性文字” 的两处文本应该保持一致</p>
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700568105164.webp"
-                      alt="1700568105164"
+                      alt="1700568105164" 
                 ></p>
-<h2 id="Markdown-分割线"><a href="#Markdown-分割线" class="headerlink" title="Markdown 分割线"></a>Markdown 分割线</h2><p>在一行中，可以使用三个以上的<code>*</code>或<code>-</code>或<code>_</code>来建立分割线，且行内不能有其他东西。语法格式如下：</p>
+<h2 id="markdown-分割线"><a class="markdownIt-Anchor" href="#markdown-分割线"></a> Markdown 分割线</h2>
+<p>在一行中，可以使用三个以上的<code>*</code>或<code>-</code>或<code>_</code>来建立分割线，且行内不能有其他东西。语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">***</span></span><br><span class="line"><span class="strong">* * *</span></span><br><span class="line"><span class="strong">**</span><span class="strong">****</span><span class="strong">****</span>**</span><br><span class="line"><span class="bullet">-</span> - -</span><br><span class="line">_ _ _ _ <span class="emphasis">_</span></span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700568349302.webp"
-                      alt="1700568349302"
+                      alt="1700568349302" 
                 ></p>
-<h2 id="Markdown-列表"><a href="#Markdown-列表" class="headerlink" title="Markdown 列表"></a>Markdown 列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>Markdown 使用<code>*</code> 或<code>+</code>或 <code>-</code>作为无序列表的标记，语法格式如下：</p>
+<h2 id="markdown-列表"><a class="markdownIt-Anchor" href="#markdown-列表"></a> Markdown 列表</h2>
+<h3 id="无序列表"><a class="markdownIt-Anchor" href="#无序列表"></a> 无序列表</h3>
+<p>Markdown 使用<code>*</code> 或<code>+</code>或 <code>-</code>作为无序列表的标记，语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> 第一项</span><br><span class="line"><span class="bullet">*</span> 第二项</span><br><span class="line"><span class="bullet">*</span> 第三项</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master//1700568613182.webp"
-                      alt="1700568613182"
+                      alt="1700568613182" 
                 ></p>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>有序列表直接使用数字加<code>.</code>来实现，即<code>1.</code>来表示序号1，注意<code>1.</code>与后续文字之间应该有一个空格字符，语法格式如下：</p>
+<h3 id="有序列表"><a class="markdownIt-Anchor" href="#有序列表"></a> 有序列表</h3>
+<p>有序列表直接使用数字加<code>.</code>来实现，即<code>1.</code>来表示序号1，注意<code>1.</code>与后续文字之间应该有一个空格字符，语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一项</span><br><span class="line"><span class="bullet">2.</span> 第二项</span><br><span class="line"><span class="bullet">3.</span> 第三项</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700568814524.webp"
-                      alt="1700568814524"
+                      alt="1700568814524" 
                 ></p>
-<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>列表嵌套，需要在子列表的选项前添加4个空格，语法格式如下：</p>
+<h3 id="列表嵌套"><a class="markdownIt-Anchor" href="#列表嵌套"></a> 列表嵌套</h3>
+<p>列表嵌套，需要在子列表的选项前添加4个空格，语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一项</span><br><span class="line"><span class="bullet">    -</span> 第一项的第一个子列表</span><br><span class="line"><span class="bullet">    -</span> 第一项的第二个子列表</span><br><span class="line"><span class="bullet">2.</span> 第二项</span><br><span class="line"><span class="bullet">    -</span> 第二项的第一个子列表</span><br><span class="line"><span class="bullet">    -</span> 第二项的第二个子列表</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700568981939.webp"
-                      alt="1700568981939"
+                      alt="1700568981939" 
                 ></p>
-<h2 id="Markdown-区块引用"><a href="#Markdown-区块引用" class="headerlink" title="Markdown 区块引用"></a>Markdown 区块引用</h2><p>Markdown 区块引用时在段落开头使用 <code>&gt;</code>符号加一个空格，<br>        同时区块也可以进行嵌套，一个<code>&gt;</code>符号表示第一层，两个<code>&gt;&gt;</code>表时第二层，依次类推……<br>        语法格式如下：</p>
+<h2 id="markdown-区块引用"><a class="markdownIt-Anchor" href="#markdown-区块引用"></a> Markdown 区块引用</h2>
+<p>Markdown 区块引用时在段落开头使用 <code>&gt;</code>符号加一个空格，<br />
+同时区块也可以进行嵌套，一个<code>&gt;</code>符号表示第一层，两个<code>&gt;&gt;</code>表时第二层，依次类推……<br />
+语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 区块引用</span></span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; 第一层区块引用</span></span><br><span class="line">&gt;&gt; 第二层区块引用</span><br><span class="line">&gt;&gt;&gt; 第三层区块引用</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700569929461.webp"
-                      alt="1700569929461"
+                      alt="1700569929461" 
                 ></p>
-<h2 id="Markdown-代码框"><a href="#Markdown-代码框" class="headerlink" title="Markdown 代码框"></a>Markdown 代码框</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>行内代码使用两个单引号包起来即可，语法格式如下：</p>
+<h2 id="markdown-代码框"><a class="markdownIt-Anchor" href="#markdown-代码框"></a> Markdown 代码框</h2>
+<h3 id="行内代码"><a class="markdownIt-Anchor" href="#行内代码"></a> 行内代码</h3>
+<p>行内代码使用两个单引号包起来即可，语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`行内代码`</span></span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700570125100.webp"
-                      alt="1700570125100"
+                      alt="1700570125100" 
                 ></p>
-<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>使用三个单引号开始，和三个单引号结束，代码包含在中间，同时还可以指定代码块语言。<br>语法示例如下：</p>
+<h3 id="代码区块"><a class="markdownIt-Anchor" href="#代码区块"></a> 代码区块</h3>
+<p>使用三个单引号开始，和三个单引号结束，代码包含在中间，同时还可以指定代码块语言。<br />
+语法示例如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">代码块</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效果展示如下：</span><br><span class="line"></span><br><span class="line">![1700570340343](https://github.com/YTAZWC/picx-images-hosting/raw/master/1700570340343.webp)</span><br><span class="line"></span><br><span class="line">## Markdown 链接</span><br><span class="line"></span><br><span class="line">### 简单使用链接</span><br><span class="line"></span><br><span class="line">链接使用示例如下所示：</span><br><span class="line"></span><br><span class="line">```markdown</span><br><span class="line">[链接名称](链接地址)</span><br><span class="line">或</span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
-
 <p>两种使用方式效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/1700570589245.webp"
-                      alt="1700570589245"
+                      alt="1700570589245" 
                 ></p>
-<h3 id="变量代替链接"><a href="#变量代替链接" class="headerlink" title="变量代替链接"></a>变量代替链接</h3><p>链接可以用变量来代替，并在文档末尾附带变量地址，示例语法如下：</p>
+<h3 id="变量代替链接"><a class="markdownIt-Anchor" href="#变量代替链接"></a> 变量代替链接</h3>
+<p>链接可以用变量来代替，并在文档末尾附带变量地址，示例语法如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个链接1作为网址变量[<span class="string">baidu</span>][<span class="symbol">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[<span class="symbol">1</span>]: <span class="link">https://baidu.com</span></span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/Markdown%E8%AF%AD%E6%B3%95%E5%8F%8A%E4%BD%BF%E7%94%A8/1700580261926.webp"
-                      alt="1700580261926"
+                      alt="1700580261926" 
                 ></p>
-<h2 id="Markdown-图片"><a href="#Markdown-图片" class="headerlink" title="Markdown 图片"></a>Markdown 图片</h2><p>Markdown 图片格式如下所示：</p>
+<h2 id="markdown-图片"><a class="markdownIt-Anchor" href="#markdown-图片"></a> Markdown 图片</h2>
+<p>Markdown 图片格式如下所示：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">图片网址 &quot;可选标题&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/Markdown%E8%AF%AD%E6%B3%95%E5%8F%8A%E4%BD%BF%E7%94%A8/1700580534885.webp"
-                      alt="1700580534885"
+                      alt="1700580534885" 
                 ></p>
-<h2 id="Markdown-表格"><a href="#Markdown-表格" class="headerlink" title="Markdown 表格"></a>Markdown 表格</h2><p>Markdown 制作表格使用 <code>|</code> 来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。<br>语法格式如下：</p>
+<h2 id="markdown-表格"><a class="markdownIt-Anchor" href="#markdown-表格"></a> Markdown 表格</h2>
+<p>Markdown 制作表格使用 <code>|</code> 来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。<br />
+语法格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|表头1|表头2|</span><br><span class="line">|----|----|</span><br><span class="line">|单元格11|单元格12|</span><br><span class="line">|单元格12|单元格22|</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/Markdown%E8%AF%AD%E6%B3%95%E5%8F%8A%E4%BD%BF%E7%94%A8/1700580818689.webp"
-                      alt="1700580818689"
+                      alt="1700580818689" 
                 ></p>
-<h3 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h3><p>设置表头对齐方式有如下几种：</p>
+<h3 id="对齐方式"><a class="markdownIt-Anchor" href="#对齐方式"></a> 对齐方式</h3>
+<p>设置表头对齐方式有如下几种：</p>
 <ul>
-<li><p><code>-:</code>设置右对齐</p>
+<li>
+<p><code>-:</code>设置右对齐</p>
 </li>
-<li><p><code>:-</code>设置左对齐</p>
+<li>
+<p><code>:-</code>设置左对齐</p>
 </li>
-<li><p><code>:-:</code>设置居中对齐</p>
+<li>
+<p><code>:-:</code>设置居中对齐</p>
 <p>语法示例如下所示：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|左对齐|居中对齐|右对齐|</span><br><span class="line">|:----|:----:|----:|</span><br><span class="line">|单元格11|单元格12|单元格13|</span><br><span class="line">|单元格21|单元格22|单元格23|</span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/Markdown%E8%AF%AD%E6%B3%95%E5%8F%8A%E4%BD%BF%E7%94%A8/1700581079443.webp"
-                      alt="1700581079443"
+                      alt="1700581079443" 
                 ></p>
 </li>
 </ul>
-<h2 id="Markdown-转义"><a href="#Markdown-转义" class="headerlink" title="Markdown 转义"></a>Markdown 转义</h2><p>对于Markdown中的一些特殊符号，可以使用反斜杠来进行转义</p>
-<h2 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h2><p>当需要在编辑器中插入数学公式时，可以使用两个美元<code>$$</code>符号包裹<em>TeX</em>或<em>LaTeX</em>格式的数学公式来实现，代码示例如下：</p>
+<h2 id="markdown-转义"><a class="markdownIt-Anchor" href="#markdown-转义"></a> Markdown 转义</h2>
+<p>对于Markdown中的一些特殊符号，可以使用反斜杠来进行转义</p>
+<h2 id="插入数学公式"><a class="markdownIt-Anchor" href="#插入数学公式"></a> 插入数学公式</h2>
+<p>当需要在编辑器中插入数学公式时，可以使用两个美元<code>$$</code>符号包裹<em>TeX</em>或<em>LaTeX</em>格式的数学公式来实现，代码示例如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\int<span class="emphasis">_0^1 &#123;x^2&#125; \,&#123;\rm d&#125;x</span></span><br><span class="line"><span class="emphasis">$$</span></span><br></pre></td></tr></table></figure>
-
 <p>效果展示如下：</p>
 <p><img  
                      lazyload
                      alt="image"
                      data-src="https://github.com/YTAZWC/picx-images-hosting/raw/master/Markdown%E8%AF%AD%E6%B3%95%E5%8F%8A%E4%BD%BF%E7%94%A8/1700582924366.webp"
-                      alt="1700582924366"
+                      alt="1700582924366" 
                 ></p>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108984311" >Markdown常用语法汇总 - 知乎 (zhihu.com)<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="参考文章"><a class="markdownIt-Anchor" href="#参考文章"></a> 参考文章</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108984311" >Markdown常用语法汇总 - 知乎 (zhihu.com)<i class="fas fa-external-link-alt"></i></a></p>
 
                 </div>
 
@@ -601,7 +620,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">主要语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">Markdown 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text">Markdown 段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%AD%97%E4%BD%93%E5%8F%8A%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">Markdown 字体及样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%9C%E4%BD%93%E3%80%81%E7%B2%97%E4%BD%93%E3%80%81%E7%B2%97%E6%96%9C%E4%BD%93"><span class="nav-number">2.3.1.</span> <span class="nav-text">斜体、粗体、粗斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">2.3.2.</span> <span class="nav-text">文字添加下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="nav-number">2.3.3.</span> <span class="nav-text">文字显示删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E8%84%9A%E6%B3%A8"><span class="nav-number">2.3.4.</span> <span class="nav-text">文字添加脚注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">2.4.</span> <span class="nav-text">Markdown 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.</span> <span class="nav-text">Markdown 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.2.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="nav-number">2.5.3.</span> <span class="nav-text">列表嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text">Markdown 区块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E4%BB%A3%E7%A0%81%E6%A1%86"><span class="nav-number">2.7.</span> <span class="nav-text">Markdown 代码框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81"><span class="nav-number">2.7.1.</span> <span class="nav-text">行内代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="nav-number">2.7.2.</span> <span class="nav-text">代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BB%A3%E6%9B%BF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.7.3.</span> <span class="nav-text">变量代替链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%9B%BE%E7%89%87"><span class="nav-number">2.8.</span> <span class="nav-text">Markdown 图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.9.</span> <span class="nav-text">Markdown 表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">2.9.1.</span> <span class="nav-text">对齐方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E8%BD%AC%E4%B9%89"><span class="nav-number">2.10.</span> <span class="nav-text">Markdown 转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.11.</span> <span class="nav-text">插入数学公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 主要语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text"> Markdown 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text"> Markdown 段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%AD%97%E4%BD%93%E5%8F%8A%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text"> Markdown 字体及样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%9C%E4%BD%93-%E7%B2%97%E4%BD%93-%E7%B2%97%E6%96%9C%E4%BD%93"><span class="nav-number">2.3.1.</span> <span class="nav-text"> 斜体、粗体、粗斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">2.3.2.</span> <span class="nav-text"> 文字添加下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="nav-number">2.3.3.</span> <span class="nav-text"> 文字显示删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E8%84%9A%E6%B3%A8"><span class="nav-number">2.3.4.</span> <span class="nav-text"> 文字添加脚注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">2.4.</span> <span class="nav-text"> Markdown 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.</span> <span class="nav-text"> Markdown 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.1.</span> <span class="nav-text"> 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.2.</span> <span class="nav-text"> 有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="nav-number">2.5.3.</span> <span class="nav-text"> 列表嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text"> Markdown 区块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E4%BB%A3%E7%A0%81%E6%A1%86"><span class="nav-number">2.7.</span> <span class="nav-text"> Markdown 代码框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81"><span class="nav-number">2.7.1.</span> <span class="nav-text"> 行内代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="nav-number">2.7.2.</span> <span class="nav-text"> 代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BB%A3%E6%9B%BF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.7.3.</span> <span class="nav-text"> 变量代替链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%9B%BE%E7%89%87"><span class="nav-number">2.8.</span> <span class="nav-text"> Markdown 图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.9.</span> <span class="nav-text"> Markdown 表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">2.9.1.</span> <span class="nav-text"> 对齐方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E8%BD%AC%E4%B9%89"><span class="nav-number">2.10.</span> <span class="nav-text"> Markdown 转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.11.</span> <span class="nav-text"> 插入数学公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text"> 参考文章</span></a></li></ol>
     </div>
 </div>
 
@@ -770,7 +789,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">主要语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">Markdown 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text">Markdown 段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%AD%97%E4%BD%93%E5%8F%8A%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">Markdown 字体及样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%9C%E4%BD%93%E3%80%81%E7%B2%97%E4%BD%93%E3%80%81%E7%B2%97%E6%96%9C%E4%BD%93"><span class="nav-number">2.3.1.</span> <span class="nav-text">斜体、粗体、粗斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">2.3.2.</span> <span class="nav-text">文字添加下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="nav-number">2.3.3.</span> <span class="nav-text">文字显示删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E8%84%9A%E6%B3%A8"><span class="nav-number">2.3.4.</span> <span class="nav-text">文字添加脚注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">2.4.</span> <span class="nav-text">Markdown 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.</span> <span class="nav-text">Markdown 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.2.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="nav-number">2.5.3.</span> <span class="nav-text">列表嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text">Markdown 区块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E4%BB%A3%E7%A0%81%E6%A1%86"><span class="nav-number">2.7.</span> <span class="nav-text">Markdown 代码框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81"><span class="nav-number">2.7.1.</span> <span class="nav-text">行内代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="nav-number">2.7.2.</span> <span class="nav-text">代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BB%A3%E6%9B%BF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.7.3.</span> <span class="nav-text">变量代替链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E5%9B%BE%E7%89%87"><span class="nav-number">2.8.</span> <span class="nav-text">Markdown 图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.9.</span> <span class="nav-text">Markdown 表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">2.9.1.</span> <span class="nav-text">对齐方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E8%BD%AC%E4%B9%89"><span class="nav-number">2.10.</span> <span class="nav-text">Markdown 转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.11.</span> <span class="nav-text">插入数学公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 主要语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text"> Markdown 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text"> Markdown 段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%AD%97%E4%BD%93%E5%8F%8A%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text"> Markdown 字体及样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%9C%E4%BD%93-%E7%B2%97%E4%BD%93-%E7%B2%97%E6%96%9C%E4%BD%93"><span class="nav-number">2.3.1.</span> <span class="nav-text"> 斜体、粗体、粗斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">2.3.2.</span> <span class="nav-text"> 文字添加下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="nav-number">2.3.3.</span> <span class="nav-text"> 文字显示删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E8%84%9A%E6%B3%A8"><span class="nav-number">2.3.4.</span> <span class="nav-text"> 文字添加脚注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">2.4.</span> <span class="nav-text"> Markdown 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.</span> <span class="nav-text"> Markdown 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.1.</span> <span class="nav-text"> 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.5.2.</span> <span class="nav-text"> 有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="nav-number">2.5.3.</span> <span class="nav-text"> 列表嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text"> Markdown 区块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E4%BB%A3%E7%A0%81%E6%A1%86"><span class="nav-number">2.7.</span> <span class="nav-text"> Markdown 代码框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81"><span class="nav-number">2.7.1.</span> <span class="nav-text"> 行内代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="nav-number">2.7.2.</span> <span class="nav-text"> 代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BB%A3%E6%9B%BF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.7.3.</span> <span class="nav-text"> 变量代替链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E5%9B%BE%E7%89%87"><span class="nav-number">2.8.</span> <span class="nav-text"> Markdown 图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.9.</span> <span class="nav-text"> Markdown 表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">2.9.1.</span> <span class="nav-text"> 对齐方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-%E8%BD%AC%E4%B9%89"><span class="nav-number">2.10.</span> <span class="nav-text"> Markdown 转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.11.</span> <span class="nav-text"> 插入数学公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text"> 参考文章</span></a></li></ol>
     </div>
 </div>
 
