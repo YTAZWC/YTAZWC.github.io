@@ -9,7 +9,7 @@
     
     <title>
         
-            KamaCoder_55_右旋字符串 |
+            找出字符串中第一个匹配项的下标_28 |
         
         花木凋零成兰
     </title>
@@ -302,7 +302,7 @@ mjx-container[display="true"] + br {
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        KamaCoder_55_右旋字符串
+                        找出字符串中第一个匹配项的下标_28
                     </div>
                 
 
@@ -331,13 +331,13 @@ mjx-container[display="true"] + br {
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-12-18 16:23:41</span>
-                <span class="mobile">2023-12-18 16:23</span>
+                <span class="pc">2023-12-19 10:18:25</span>
+                <span class="mobile">2023-12-19 10:18</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Mon Dec 18 2023 16:48:37 GMT+0800">2023-12-18 16:48:37</span>
+                <span class="pc" data-updated="Tue Dec 19 2023 15:21:21 GMT+0800">2023-12-19 15:21:21</span>
             </span>
         
 
@@ -345,10 +345,7 @@ mjx-container[display="true"] + br {
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul class="article-category-ul">
                     
-                            <li class="category-item"><a href="/categories/%E5%8D%A1%E7%A0%81%E7%BD%91/">卡码网</a></li>
-                        
-                    
-                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/%E5%8D%A1%E7%A0%81%E7%BD%91/%E7%AC%AC%E5%85%AB%E6%9C%9F%E6%A8%A1%E6%8B%9F%E7%AC%94%E8%AF%95/">第八期模拟笔试</a></li>
+                            <li class="category-item"><a href="/categories/leetcode/">leetcode</a></li>
                         
                     
                 </ul>
@@ -363,6 +360,15 @@ mjx-container[display="true"] + br {
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">字符串匹配</a></li>
+                        
+                    
                 </ul>
             </span>
         
@@ -370,12 +376,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>729 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>564 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
             </span>
         
         
@@ -396,47 +402,49 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="右旋字符串"><a class="markdownIt-Anchor" href="#右旋字符串"></a> 右旋字符串</h1>
-<p>时间限制：1.000S  空间限制：128MB</p>
-<h6 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h6>
-<p>字符串的右旋转操作是把字符串尾部的若干个字符转移到字符串的前面。给定一个字符串 s 和一个正整数 k，请编写一个函数，将字符串中的后面 k 个字符移到字符串的前面，实现字符串的右旋转操作。</p>
-<p>例如，对于输入字符串 “abcdefg” 和整数 2，函数应该将其转换为 “fgabcde”。</p>
-<h6 id="输入描述"><a class="markdownIt-Anchor" href="#输入描述"></a> 输入描述</h6>
-<p>输入共包含两行，第一行为一个正整数 k，代表右旋转的位数。第二行为字符串 s，代表需要旋转的字符串。</p>
-<h6 id="输出描述"><a class="markdownIt-Anchor" href="#输出描述"></a> 输出描述</h6>
-<p>输出共一行，为进行了右旋转操作后的字符串。</p>
-<h6 id="输入示例"><a class="markdownIt-Anchor" href="#输入示例"></a> 输入示例</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">abcdefg</span><br></pre></td></tr></table></figure>
-<h6 id="输出示例"><a class="markdownIt-Anchor" href="#输出示例"></a> 输出示例</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fgabcde</span><br></pre></td></tr></table></figure>
-<h6 id="提示信息"><a class="markdownIt-Anchor" href="#提示信息"></a> 提示信息</h6>
-<p>数据范围：<br>
-<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>&lt;</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">1 \leq k &lt; 10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>,<br>
-<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>s</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>&lt;</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">1 \leq s.length &lt; 10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>;</p>
-<h1 id="解法一模拟"><a class="markdownIt-Anchor" href="#解法一模拟"></a> 解法一(模拟)</h1>
+                    <h1 id="找出字符串中第一个匹配项的下标"><a class="markdownIt-Anchor" href="#找出字符串中第一个匹配项的下标"></a> 找出字符串中第一个匹配项的下标</h1>
+<p>给你两个字符串 <code>haystack</code> 和 <code>needle</code> ，请你在 <code>haystack</code> 字符串中找出 <code>needle</code> 字符串的第一个匹配项的下标（下标从 0 开始）。如果 <code>needle</code> 不是 <code>haystack</code> 的一部分，则返回 <code>-1</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><strong>输入：</strong> haystack = “sadbutsad”, needle = “sad”<br>
+<strong>输出：</strong> 0<br>
+<strong>解释：</strong>“sad” 在下标 0 和 6 处匹配。<br>
+第一个匹配项的下标是 0 ，所以返回 0 。</p>
+<p><strong>示例 2：</strong></p>
+<p><strong>输入：</strong> haystack = “leetcode”, needle = “leeto”<br>
+<strong>输出：</strong>-1<br>
+<strong>解释：</strong>“leeto” 没有在 “leetcode” 中出现，所以返回 -1 。</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>h</mi><mi>a</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>c</mi><mi>k</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo separator="true">,</mo><mi>n</mi><mi>e</mi><mi>e</mi><mi>d</mi><mi>l</mi><mi>e</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq haystack.length, needle.length \leq 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></li>
+<li><code>haystack</code> 和 <code>needle</code> 仅由小写英文字符组成</li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>双指针</li>
+<li>字符串</li>
+<li>字符串匹配</li>
+</ul>
+<h1 id="解法一kmp前缀表不右移"><a class="markdownIt-Anchor" href="#解法一kmp前缀表不右移"></a> 解法一(KMP+前缀表不右移)</h1>
 <p>思路分析：</p>
 <ol>
 <li>
-<p>读取字符串，然后将字符串转化为字符数组，再在该字符数组的基础上进行旋转</p>
+<p>前缀表不右移，采用j初始化为0的kmp算法</p>
 </li>
 <li>
-<p>由k将字符串分成两部分<code>[0, n-k]</code>和<code>[n-k+1, n-1]</code>两部分，而最终得到的结果将第二部分移动到第一部分前面</p>
-</li>
-<li>
-<p>可以先将整个字符串反转，然后再将这两部分分别反转，即可完成</p>
+<p>首先求出next数组，然后再根据next数组去判断<code>haystack</code> 是否有子串<code>needle</code></p>
 </li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException {</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 读取k</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> Reader.nextInt();</span><br><span class="line">        <span class="comment">// 读取字符串</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> Reader.nextLine();</span><br><span class="line">        <span class="comment">// 将字符串转化为字符数组</span></span><br><span class="line">        <span class="type">char</span>[] str = s.toCharArray();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 先反转整个字符串</span></span><br><span class="line">        reverseString(str, <span class="number">0</span>, str.length-<span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 再反转原先的第二部分</span></span><br><span class="line">        reverseString(str, <span class="number">0</span>, k-<span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 反转原先的第一部分</span></span><br><span class="line">        reverseString(str, k, str.length-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出右旋转后的字符串</span></span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintWriter</span>(System.out);</span><br><span class="line">        out.println(<span class="keyword">new</span> <span class="title class_">String</span>(str));</span><br><span class="line">        out.flush();    <span class="comment">// 刷新快速输出流</span></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 相向双指针 实现字符串反转</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] str, <span class="type">int</span> left, <span class="type">int</span> right)</span> {</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) {</span><br><span class="line">            str[left] ^= str[right];</span><br><span class="line">            str[right] ^= str[left];</span><br><span class="line">            str[left] ^= str[right];</span><br><span class="line">            ++ left;</span><br><span class="line">            -- right;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Reader</span> {</span><br><span class="line">        <span class="keyword">static</span> <span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="keyword">static</span> <span class="type">StringTokenizer</span> <span class="variable">tokenizer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringTokenizer</span>(<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">static</span> String <span class="title function_">nextLine</span><span class="params">()</span> <span class="keyword">throws</span> IOException {       <span class="comment">// 读取下一行字符串</span></span><br><span class="line">            <span class="keyword">return</span> reader.readLine();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">static</span> String <span class="title function_">next</span><span class="params">()</span> <span class="keyword">throws</span> IOException {      <span class="comment">// 读取下一个单词</span></span><br><span class="line">            <span class="keyword">while</span> (!tokenizer.hasMoreTokens()) {</span><br><span class="line">                tokenizer = <span class="keyword">new</span> <span class="title class_">StringTokenizer</span>(reader.readLine());</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">nextInt</span><span class="params">()</span> <span class="keyword">throws</span> IOException {       <span class="comment">// 读取一个Int型整数值</span></span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">strStr</span><span class="params">(String haystack, String needle)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">hLen</span> <span class="operator">=</span> haystack.length();    <span class="comment">// 字符串haystack的长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">nLen</span> <span class="operator">=</span> needle.length();        <span class="comment">// 字符串needle的长度</span></span><br><span class="line">        <span class="type">int</span>[] next = <span class="keyword">new</span> <span class="title class_">int</span>[nLen];        <span class="comment">// 前缀表对应的数组 即就是前缀表</span></span><br><span class="line">        <span class="comment">// 初始化next数组</span></span><br><span class="line">        getNext(next, needle);</span><br><span class="line">        <span class="comment">// 进行判断 needle是否为haystack的子串</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 与初始化next数组时的j对应</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; hLen; ++i) {</span><br><span class="line">            <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; haystack.charAt(i) != needle.charAt(j)) {</span><br><span class="line">                j = next[j-<span class="number">1</span>];</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> (haystack.charAt(i) == needle.charAt(j))    <span class="comment">// 匹配移动指针j</span></span><br><span class="line">                ++ j;</span><br><span class="line">            <span class="keyword">if</span> (j == nLen) {    <span class="comment">// 说明needle是haystack的子串</span></span><br><span class="line">                <span class="keyword">return</span> i - nLen + <span class="number">1</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">getNext</span><span class="params">(<span class="type">int</span>[] next, String t)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="comment">// 从0开始</span></span><br><span class="line">        next[<span class="number">0</span>] = j;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> t.length();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++ i) {</span><br><span class="line">            <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; t.charAt(i) != t.charAt(j)) {</span><br><span class="line">                j = next[j-<span class="number">1</span>];</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> (t.charAt(i) == t.charAt(j))</span><br><span class="line">                ++ j;</span><br><span class="line">            next[i] = j;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">time_space_table:</span><br><span class="line">/1065/sample.in:AC mem=11296k time=108ms</span><br><span class="line">/1065/test1.in:AC mem=11328k time=115ms</span><br><span class="line">/1065/test2.in:AC mem=11372k time=115ms</span><br><span class="line">/1065/test3.in:AC mem=11372k time=113ms</span><br><span class="line">/1065/test4.in:AC mem=11372k time=114ms</span><br><span class="line">/1065/test5.in:AC mem=11372k time=116ms</span><br><span class="line">/1065/test6.in:AC mem=11372k time=112ms</span><br><span class="line">/1065/test7.in:AC mem=11372k time=114ms</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:40.5 MB,击败了5.07% 的Java用户</span><br></pre></td></tr></table></figure>
 <p>复杂度分析：</p>
 <ul>
 <li>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，遍历字符串数组</p>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n+m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span>，判断<code>needle</code>是<code>haystack</code>子串花费时间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，初始化<code>next</code>数组花费时间复杂度<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></p>
 </li>
 <li>
-<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，使用了一个字符串数组进行反转</p>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span>，使用数组<code>next</code>花费空间复杂度<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></p>
 </li>
 </ul>
 
@@ -448,11 +456,11 @@ mjx-container[display="true"] + br {
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                KamaCoder_55_右旋字符串
+                找出字符串中第一个匹配项的下标_28
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/12/18/KamaCoder-55-右旋字符串/
+                2023/12/19/找出字符串中第一个匹配项的下标-28/
             </div>
         </div>
 
@@ -468,7 +476,7 @@ mjx-container[display="true"] + br {
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-12-18 16:23</div>
+                <div class="content">2023-12-19 10:18</div>
             </div>
 
 
@@ -505,6 +513,18 @@ mjx-container[display="true"] + br {
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
                                     </li>
                                 
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">字符串匹配</a>
+                                    </li>
+                                
                             </ul>
                         
                     </div>
@@ -518,31 +538,15 @@ mjx-container[display="true"] + br {
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/12/19/%E6%89%BE%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8C%B9%E9%85%8D%E9%A1%B9%E7%9A%84%E4%B8%8B%E6%A0%87-28/"
-                                   title="找出字符串中第一个匹配项的下标_28"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">找出字符串中第一个匹配项的下标_28</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/12/18/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%8D%95%E8%AF%8D-151/"
-                                   title="反转字符串的单词_151"
+                                   href="/2023/12/18/KamaCoder-55-%E5%8F%B3%E6%97%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+                                   title="KamaCoder_55_右旋字符串"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">反转字符串的单词_151</span>
+                                        <span class="post-nav-title-item text-ellipsis">KamaCoder_55_右旋字符串</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -570,7 +574,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%B3%E6%97%8B%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text"> 右旋字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text"> 输入描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.0.0.0.0.3.</span> <span class="nav-text"> 输出描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.0.0.0.0.4.</span> <span class="nav-text"> 输入示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.0.0.0.0.5.</span> <span class="nav-text"> 输出示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">1.0.0.0.0.6.</span> <span class="nav-text"> 提示信息</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(模拟)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%BE%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8C%B9%E9%85%8D%E9%A1%B9%E7%9A%84%E4%B8%8B%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text"> 找出字符串中第一个匹配项的下标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80kmp%E5%89%8D%E7%BC%80%E8%A1%A8%E4%B8%8D%E5%8F%B3%E7%A7%BB"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(KMP+前缀表不右移)</span></a></li></ol>
     </div>
 </div>
 
@@ -739,7 +743,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%B3%E6%97%8B%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text"> 右旋字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text"> 输入描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.0.0.0.0.3.</span> <span class="nav-text"> 输出描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.0.0.0.0.4.</span> <span class="nav-text"> 输入示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.0.0.0.0.5.</span> <span class="nav-text"> 输出示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">1.0.0.0.0.6.</span> <span class="nav-text"> 提示信息</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(模拟)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%BE%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8C%B9%E9%85%8D%E9%A1%B9%E7%9A%84%E4%B8%8B%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text"> 找出字符串中第一个匹配项的下标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80kmp%E5%89%8D%E7%BC%80%E8%A1%A8%E4%B8%8D%E5%8F%B3%E7%A7%BB"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(KMP+前缀表不右移)</span></a></li></ol>
     </div>
 </div>
 
