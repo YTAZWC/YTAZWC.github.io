@@ -195,6 +195,13 @@
                     <li class="article-item border-box">
                         <span class="article-date border-box">12-04</span>
                         <a class="article-title border-box text-ellipsis"
+                           href="/2023/12/04/LCR-146-%E8%9E%BA%E6%97%8B%E9%81%8D%E5%8E%86%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/"
+                        >LCR_146_螺旋遍历二维数组</a>
+                    </li>
+                
+                    <li class="article-item border-box">
+                        <span class="article-date border-box">12-04</span>
+                        <a class="article-title border-box text-ellipsis"
                            href="/2023/12/04/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5-54/"
                         >螺旋矩阵_54</a>
                     </li>
@@ -255,13 +262,6 @@
                         >删除有序数组中的重复项_26</a>
                     </li>
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">11-27</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2023/11/27/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-27/"
-                        >移除元素_27</a>
-                    </li>
-                
             </ul>
         </section>
     
@@ -269,31 +269,78 @@
 
         </div>
     </div>
-    
-    <div class="paginator border-box flex-center">
-        <div class="btn-wrap allowed">
-            <a class="jump-btn"
-               href="/archives/2023/page/3/"
-            ><i class="fa-solid fa-chevron-left"></i></a>
-        </div>
+    .paginator {
+  margin-top 2rem
+  padding-top 0.2rem
+  user-select none
+
+  .btn-wrap {
+    cursor not-allowed
+
+    &.allowed {
+      cursor pointer
+
+      a.jump-btn {
+        pointer-events auto
 
 
-        <div class="page-number-box border-box flex-center">
-            <input class="page-number-input border-box base-color-size"
-                   type="number"
-                   value="4"
-                   min="1"
-                   max="6"
-            ><span class="delimiter base-color-size">/</span><span class="base-color-size">6</span>
-        </div>
+        i {
+          color var(--text-color-3)
+        }
+      }
+    }
+
+    a.jump-btn {
+      padding 0.2rem
+      pointer-events none
+
+      i {
+        color var(--text-color-4)
+        font-size 1rem
+      }
+    }
+  }
 
 
-        <div class="btn-wrap allowed">
-            <a class="jump-btn"
-               href="/archives/2023/page/5/"
-            ><i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-    </div>
+
+  .base-color-size {
+    color var(--text-color-3)
+    font-size 1rem
+  }
+
+  .page-number-box {
+    margin 0 1rem
+
+    .page-number-input {
+      width 2.8rem
+      height 1.8rem
+      margin 0
+      padding 0
+      font-weight 400 !important
+      text-align center
+      background none
+      border 0.1rem solid var(--border-color)
+      border-radius 0.3rem
+      outline none
+      -webkit-appearance none
+
+      &::-webkit-outer-spin-button
+      &::-webkit-inner-spin-button {
+        -webkit-appearance none !important
+      }
+
+      &:hover
+      &:focus {
+        border-color var(--primary-color)
+      }
+    }
+
+
+    .delimiter {
+      margin 0 0.6rem
+    }
+  }
+}
 
 
 
