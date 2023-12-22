@@ -9,7 +9,7 @@
     
     <title>
         
-            环形链表II_142 |
+            逆波兰表达式_150 |
         
         花木凋零成兰
     </title>
@@ -302,7 +302,7 @@ mjx-container[display="true"] + br {
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        环形链表II_142
+                        逆波兰表达式_150
                     </div>
                 
 
@@ -331,13 +331,13 @@ mjx-container[display="true"] + br {
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-12-09 15:40:57</span>
-                <span class="mobile">2023-12-09 15:40</span>
+                <span class="pc">2023-12-22 09:02:27</span>
+                <span class="mobile">2023-12-22 09:02</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Dec 09 2023 17:06:45 GMT+0800">2023-12-09 17:06:45</span>
+                <span class="pc" data-updated="Fri Dec 22 2023 09:42:27 GMT+0800">2023-12-22 09:42:27</span>
             </span>
         
 
@@ -360,15 +360,6 @@ mjx-container[display="true"] + br {
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%93%BE%E8%A1%A8/">链表</a></li>
-                        
-                    
                 </ul>
             </span>
         
@@ -376,12 +367,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>940 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -402,98 +393,83 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="环形链表-ii"><a class="markdownIt-Anchor" href="#环形链表-ii"></a> 环形链表 II</h1>
-<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/">142. 环形链表 II - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
-<p>给定一个链表的头节点 <code>head</code> ，返回链表开始入环的第一个节点。 <em>如果链表无环，则返回 <code>null</code>。</em></p>
-<p>如果链表中有某个节点，可以通过连续跟踪 <code>next</code> 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（<strong>索引从 0 开始</strong>）。如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意：<code>pos</code> 不作为参数进行传递</strong>，仅仅是为了标识链表的实际情况。</p>
-<p><strong>不允许修改</strong> 链表。</p>
+                    <h1 id="逆波兰表达式"><a class="markdownIt-Anchor" href="#逆波兰表达式"></a> 逆波兰表达式</h1>
+<p>给你一个字符串数组 <code>tokens</code> ，表示一个根据 <a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%86%E6%B3%A2%E5%85%B0%E5%BC%8F/128437">逆波兰表示法<i class="fas fa-external-link-alt"></i></a> 表示的算术表达式。</p>
+<p>请你计算该表达式。返回一个表示表达式值的整数。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>有效的算符为 <code>'+'</code>、<code>'-'</code>、<code>'*'</code> 和 <code>'/'</code> 。</li>
+<li>每个操作数（运算对象）都可以是一个整数或者另一个表达式。</li>
+<li>两个整数之间的除法总是 <strong>向零截断</strong> 。</li>
+<li>表达式中不含除零运算。</li>
+<li>输入是一个根据逆波兰表示法表示的算术表达式。</li>
+<li>答案及所有中间计算结果可以用 <strong>32 位</strong> 整数表示。</li>
+</ul>
 <p><strong>示例 1：</strong></p>
-<p><img lazyload="" alt="" data-src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png"></p>
-<p><strong>输入：</strong> head = [3,2,0,-4], pos = 1<br>
-<strong>输出：</strong> 返回索引为 1 的链表节点<br>
-<strong>解释：</strong> 链表中有一个环，其尾部连接到第二个节点。</p>
+<p><strong>输入：</strong> tokens = [“2”,“1”,“+”,“3”,“*”]<br>
+<strong>输出：</strong> 9<br>
+<strong>解释：</strong> 该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9</p>
 <p><strong>示例 2：</strong></p>
-<p><img lazyload="" alt="" data-src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png"></p>
-<p><strong>输入：</strong> head = [1,2], pos = 0<br>
-<strong>输出：</strong> 返回索引为 0 的链表节点<br>
-<strong>解释：</strong> 链表中有一个环，其尾部连接到第一个节点。</p>
+<p><strong>输入：</strong> tokens = [“4”,“13”,“5”,“/”,“+”]<br>
+<strong>输出：</strong> 6<br>
+<strong>解释：</strong> 该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6</p>
 <p><strong>示例 3：</strong></p>
-<p><img lazyload="" alt="" data-src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png"></p>
-<p><strong>输入：</strong> head = [1], pos = -1<br>
-<strong>输出：</strong> 返回 null<br>
-<strong>解释：</strong> 链表中没有环。</p>
+<p><strong>输入：</strong> tokens = [“10”,“6”,“9”,“3”,“+”,“-11”,“<em>“,”/“,”</em>”,“17”,“+”,“5”,“+”]<br>
+<strong>输出：</strong> 22<br>
+<strong>解释：</strong> 该算式转化为常见的中缀算术表达式为：<br>
+((10 * (6 / ((9 + 3) * -11))) + 17) + 5<br>
+= ((10 * (6 / (12 * -11))) + 17) + 5<br>
+= ((10 * (6 / -132)) + 17) + 5<br>
+= ((10 * 0) + 17) + 5<br>
+= (0 + 17) + 5<br>
+= 17 + 5<br>
+= 22</p>
 <p><strong>提示：</strong></p>
 <ul>
-<li>链表中节点的数目范围在范围 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 10^{4}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> 内</li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo>&lt;</mo><mo>=</mo><mi>N</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi mathvariant="normal">.</mi><mi>v</mi><mi>a</mi><mi>l</mi><mo>&lt;</mo><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">-10^5 &lt;= Node.val &lt;= 10^{5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span></li>
-<li><code>pos</code> 的值为 <code>-1</code> 或者链表中的一个有效索引</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>t</mi><mi>o</mi><mi>k</mi><mi>e</mi><mi>n</mi><mi>s</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq tokens.length \leq 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></li>
+<li><code>tokens[i]</code> 是一个算符（<code>"+"</code>、<code>"-"</code>、<code>"*"</code> 或 <code>"/"</code>），或是在范围 <code>[-200, 200]</code> 内的一个整数</li>
 </ul>
-<p><strong>进阶：</strong> 你是否可以使用 <code>O(1)</code> 空间解决此题？</p>
-<h1 id="解法"><a class="markdownIt-Anchor" href="#解法"></a> 解法</h1>
-<h2 id="解法一哈希表"><a class="markdownIt-Anchor" href="#解法一哈希表"></a> 解法一(哈希表)</h2>
+<p><strong>逆波兰表达式：</strong></p>
+<p>逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。</p>
+<ul>
+<li>平常使用的算式则是一种中缀表达式，如 <code>( 1 + 2 ) * ( 3 + 4 )</code> 。</li>
+<li>该算式的逆波兰表达式写法为 <code>( ( 1 2 + ) ( 3 4 + ) * )</code> 。</li>
+</ul>
+<p>逆波兰表达式主要有以下两个优点：</p>
+<ul>
+<li>去掉括号后表达式无歧义，上式即便写成 <code>1 2 + 3 4 + *</code> 也可以依据次序计算出正确结果。</li>
+<li>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中</li>
+</ul>
+<h1 id="解法一栈deque模拟"><a class="markdownIt-Anchor" href="#解法一栈deque模拟"></a> 解法一(栈deque+模拟)</h1>
 <p>思路分析：</p>
 <ol>
 <li>
-<p>创建一个哈希表<code>hashNode</code>存储链表中的节点</p>
+<p>根据题目提示以及逆波兰表达式的定义，我们使用栈来存储字符串数组，即遍历字符串数组，并模拟逆波兰表达式的计算方式</p>
 </li>
 <li>
-<p>对链表进行遍历，让出现重复节点时，即为链表开始入环的第一个节点，将其返回即可</p>
-</li>
-</ol>
-<p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">detectCycle</span><span class="params">(ListNode head)</span> {</span><br><span class="line">        <span class="comment">// 创建哈希表</span></span><br><span class="line">        HashMap&lt;ListNode, Integer&gt; hashNode = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="literal">null</span>) {</span><br><span class="line">            <span class="keyword">if</span> (hashNode.containsKey(cur)) {  <span class="comment">// 存在节点直接返回</span></span><br><span class="line">                <span class="keyword">return</span> cur;</span><br><span class="line">            }</span><br><span class="line">            hashNode.put(cur, <span class="number">1</span>);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:3 ms,击败了18.03% 的Java用户</span><br><span class="line">    内存消耗:42.9 MB,击败了14.97% 的Java用户</span><br></pre></td></tr></table></figure>
-<p>复杂度分析：</p>
-<ul>
-<li>
-<p>时间复杂度：O(n)，遍历一遍链表</p>
+<p>在遍历字符串的过程中，如果遇到数字字符，则压入栈中</p>
 </li>
 <li>
-<p>空间复杂度：O(n)，需要存储链表的节点</p>
-</li>
-</ul>
-<h2 id="解法二双指针"><a class="markdownIt-Anchor" href="#解法二双指针"></a> 解法二(双指针)</h2>
-<p>思路分析：</p>
-<ol>
-<li>
-<p>使用两个指针<code>fast</code>和<code>slow</code>，起始都位于链表的头部，<code>slow</code>每次向后移动一个位置，<code>fast</code>每次向后移动两个位置，若链表中存在环，则<code>fast</code>指针最终会再次与<code>slow</code>指针在环中相遇</p>
+<p>如果遇到运算字符，则从栈中弹出两个元素，进行运算字符对应的运算，然后再把最后结果压入栈中</p>
 </li>
 <li>
-<p>因为<code>fast</code>每次比<code>slow</code>多走一步，有环，则<code>fast</code>一定会追上<code>slow</code></p>
+<p>遍历结束后，栈中唯一的元素即为逆波兰表达式的运算结果</p>
 </li>
 <li>
-<p>假设链表长度为<code>a+b</code>，即<code>a</code>指链表头部到链表环入口的长度，<code>b</code>为环的长度</p>
-<ol>
-<li>
-<p>且<code>fast</code>指针走的步数是<code>slow</code>走的步数的<strong>两倍</strong>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mn>2</mn><mi>s</mi></mrow><annotation encoding="application/x-tex">f = 2s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathnormal">s</span></span></span></span></p>
-</li>
-<li>
-<p>当<code>fast</code>与<code>slow</code>相遇时，两个指针所走长度关系为，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>s</mi><mo>+</mo><mi>n</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">f = s + nb</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">b</span></span></span></span>，<code>nb</code>指的是<code>n</code>圈环的长度</p>
-</li>
-<li>
-<p>则有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>n</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">s = nb</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">b</span></span></span></span>，<strong>即两个指针<code>fast</code>和<code>slow</code>分别走了<code>2n</code>、<code>n</code>个环的周长</strong></p>
-</li>
-</ol>
-</li>
-<li>
-<p>且有链表环的入口点为，从链表头部走<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mi>n</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">a+nb</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">b</span></span></span></span>步到达，<code>fast</code>和<code>slow</code>相遇时时<code>slow</code>已走过<code>nb</code>步，即只需再走<code>a</code>步，<code>slow</code>指向链表环的入口点</p>
-</li>
-<li>
-<p>此时，让一个指针<code>ptr</code>从链表头部开始遍历，且与<code>slow</code>同时移动，当指针<code>ptr</code>走过a步时，指向链表环的入口点，恰好此时指针<code>slow</code>也指向链表环的入口点，即两个指针相遇时，刚好均指向链表环的路口点</p>
+<p>同时根据题目意思，输入的字符串数组刚好为一个完整的逆波兰表达式，因此不需要考虑边界条件</p>
 </li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">detectCycle</span><span class="params">(ListNode head)</span> {</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">fast</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">slow</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="comment">// 若fast为空则说明不含有环 退出循环</span></span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="literal">null</span> &amp;&amp; fast.next != <span class="literal">null</span>) {</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            <span class="keyword">if</span> (fast == slow) {        <span class="comment">// 当fast与slow相遇</span></span><br><span class="line">                <span class="type">ListNode</span> <span class="variable">ptr</span> <span class="operator">=</span> head;</span><br><span class="line">                <span class="keyword">while</span> (ptr != slow) {    <span class="comment">// 寻找环入口处节点</span></span><br><span class="line">                    slow = slow.next;</span><br><span class="line">                    ptr = ptr.next;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">return</span> ptr;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">evalRPN</span><span class="params">(String[] tokens)</span> {</span><br><span class="line">        Deque&lt;Integer&gt; deque = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();	<span class="comment">// 辅助计算栈</span></span><br><span class="line">        <span class="keyword">for</span> (String str: tokens) {    <span class="comment">//遍历字符串数组</span></span><br><span class="line">            <span class="keyword">if</span> (str.equals(<span class="string">"+"</span>) || str.equals(<span class="string">"-"</span>) || str.equals(<span class="string">"*"</span>) || str.equals(<span class="string">"/"</span>)) {</span><br><span class="line">                <span class="comment">// 当字符串是运算符号时 从栈中取出两个元素 执行计算</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> deque.pop();</span><br><span class="line">                <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> deque.pop();</span><br><span class="line">                <span class="comment">// 需要注意 在执行二元运算时 二元的顺序 应该nums2在前nums1在后</span></span><br><span class="line">                <span class="keyword">switch</span> (str) {</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"+"</span> : </span><br><span class="line">                        deque.push(num2+num1);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"-"</span> :</span><br><span class="line">                        deque.push(num2-num1);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"*"</span>:</span><br><span class="line">                        deque.push(num2*num1);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"/"</span>:</span><br><span class="line">                        deque.push(num2/num1);</span><br><span class="line">                    <span class="keyword">default</span>:</span><br><span class="line">                }</span><br><span class="line">            } <span class="keyword">else</span> { <span class="comment">// 字符串为数字字符 则压入栈中</span></span><br><span class="line">                deque.push(Integer.parseInt(str));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> deque.pop();		<span class="comment">// 栈中最后一个元素 即为表达式计算结果</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:0 ms,击败了100.00% 的Java用户</span><br><span class="line">    内存消耗:43 MB,击败了10.51% 的Java用户</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:6 ms,击败了57.69% 的Java用户</span><br><span class="line">    内存消耗:43.6 MB,击败了5.01% 的Java用户</span><br></pre></td></tr></table></figure>
 <p>复杂度分析：</p>
 <ul>
 <li>
-<p>时间复杂度：O(n)，对链表进行遍历</p>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，即遍历一遍字符串数组</p>
 </li>
 <li>
-<p>空间复杂度：O(1)，使用了常量级变量</p>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，需要使用栈来存储运算时的数字</p>
 </li>
 </ul>
 
@@ -505,11 +481,11 @@ mjx-container[display="true"] + br {
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                环形链表II_142
+                逆波兰表达式_150
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/12/09/环形链表II-142/
+                2023/12/22/逆波兰表达式-150/
             </div>
         </div>
 
@@ -525,7 +501,7 @@ mjx-container[display="true"] + br {
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-12-09 15:40</div>
+                <div class="content">2023-12-22 09:02</div>
             </div>
 
 
@@ -562,18 +538,6 @@ mjx-container[display="true"] + br {
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
                                     </li>
                                 
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
-                                    </li>
-                                
                             </ul>
                         
                     </div>
@@ -587,31 +551,15 @@ mjx-container[display="true"] + br {
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/12/10/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/"
-                                   title="哈希表理论基础"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">哈希表理论基础</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/12/09/%E9%9D%A2%E8%AF%95%E9%A2%98-02-07-%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4/"
-                                   title="面试题_02_07_链表相交"
+                                   href="/2023/12/21/%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%9B%B8%E9%82%BB%E9%87%8D%E5%A4%8D%E9%A1%B9-1047/"
+                                   title="删除字符串中的所有相邻重复项_1047"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">面试题_02_07_链表相交</span>
+                                        <span class="post-nav-title-item text-ellipsis">删除字符串中的所有相邻重复项_1047</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -639,7 +587,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-ii"><span class="nav-number">1.</span> <span class="nav-text"> 环形链表 II</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 解法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(哈希表)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 逆波兰表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%A0%88deque%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(栈deque+模拟)</span></a></li></ol>
     </div>
 </div>
 
@@ -808,7 +756,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-ii"><span class="nav-number">1.</span> <span class="nav-text"> 环形链表 II</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 解法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(哈希表)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 逆波兰表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%A0%88deque%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(栈deque+模拟)</span></a></li></ol>
     </div>
 </div>
 
