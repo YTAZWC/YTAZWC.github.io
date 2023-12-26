@@ -337,7 +337,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Tue Dec 26 2023 10:50:20 GMT+0800">2023-12-26 10:50:20</span>
+                <span class="pc" data-updated="Tue Dec 26 2023 14:13:46 GMT+0800">2023-12-26 14:13:46</span>
             </span>
         
 
@@ -391,12 +391,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>676 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1k 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
             </span>
         
         
@@ -432,7 +432,7 @@ mjx-container[display="true"] + br {
 <li>题目数据保证答案唯一，换句话说，数组中前 <code>k</code> 个高频元素的集合是唯一的</li>
 </ul>
 <p><strong>进阶：</strong> 你所设计算法的时间复杂度 <strong>必须</strong> 优于 <code>O(n log n)</code> ，其中 <code>n</code> 是数组大小。</p>
-<h1 id="解法一优先队列"><a class="markdownIt-Anchor" href="#解法一优先队列"></a> 解法一(优先队列)</h1>
+<h1 id="解法一大顶堆优先队列"><a class="markdownIt-Anchor" href="#解法一大顶堆优先队列"></a> 解法一(大顶堆优先队列)</h1>
 <p>思路分析：</p>
 <ol>
 <li>
@@ -452,7 +452,7 @@ mjx-container[display="true"] + br {
 </li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] topKFrequent(<span class="type">int</span>[] nums, <span class="type">int</span> k) {</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : nums) {	<span class="comment">// 使用哈希表对数组元素个数进行统计</span></span><br><span class="line">            hashMap.put(num, hashMap.getOrDefault(num, <span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        }</span><br><span class="line">        PriorityQueue&lt;<span class="type">int</span>[]&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(((o1, o2) -&gt; {</span><br><span class="line">            <span class="keyword">return</span> o2[<span class="number">1</span>] - o1[<span class="number">1</span>];</span><br><span class="line">        }));</span><br><span class="line">        hashMap.forEach((key, value) -&gt; {	<span class="comment">// 将哈希表元素保存到优先队列中进行排序</span></span><br><span class="line">            pq.offer(<span class="keyword">new</span> <span class="title class_">int</span>[]{key ,value});</span><br><span class="line">        });</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; k; ++i) {	<span class="comment">// 获取前k个高频元素</span></span><br><span class="line">            ans[i] = pq.poll()[<span class="number">0</span>];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] topKFrequent(<span class="type">int</span>[] nums, <span class="type">int</span> k) {</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : nums) {    <span class="comment">// 使用哈希表对数组元素个数进行统计</span></span><br><span class="line">            hashMap.put(num, hashMap.getOrDefault(num, <span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        }</span><br><span class="line">        PriorityQueue&lt;<span class="type">int</span>[]&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(((o1, o2) -&gt; {</span><br><span class="line">            <span class="keyword">return</span> o2[<span class="number">1</span>] - o1[<span class="number">1</span>];</span><br><span class="line">        }));</span><br><span class="line">        hashMap.forEach((key, value) -&gt; {    <span class="comment">// 将哈希表元素保存到优先队列中进行排序</span></span><br><span class="line">            pq.offer(<span class="keyword">new</span> <span class="title class_">int</span>[]{key ,value});</span><br><span class="line">        });</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; k; ++i) {    <span class="comment">// 获取前k个高频元素</span></span><br><span class="line">            ans[i] = pq.poll()[<span class="number">0</span>];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
 <blockquote>
 <p>解答成功:<br>
@@ -466,6 +466,33 @@ mjx-container[display="true"] + br {
 </li>
 <li>
 <p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，需要使用哈希表和优先队列来存储统计结果</p>
+</li>
+</ul>
+<h1 id="解法二小顶堆优先队列"><a class="markdownIt-Anchor" href="#解法二小顶堆优先队列"></a> 解法二(小顶堆优先队列)</h1>
+<p>思路分析：</p>
+<ol>
+<li>
+<p>根据解法一使用大顶堆优先队列，将map中的二元组按照<code>value</code>值从大到小排列，花费时间复杂度不易控制</p>
+</li>
+<li>
+<p>考虑使用小顶堆优先队列尝试剪枝和优化，即根据二元组的<code>value</code>值从小到大排列，每次排列<code>k</code>个二元组，当队列元素个数超过<code>k</code>个时，将队首的较小元素移除，维护队列中只排列<code>k</code>个二元组</p>
+</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="comment">// 小顶堆优先队列</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] topKFrequent(<span class="type">int</span>[] nums, <span class="type">int</span> k) {</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : nums) {	<span class="comment">// 使用哈希表对数组元素个数进行统计</span></span><br><span class="line">            hashMap.put(num, hashMap.getOrDefault(num, <span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        }</span><br><span class="line">        PriorityQueue&lt;<span class="type">int</span>[]&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(((o1, o2) -&gt; {</span><br><span class="line">            <span class="keyword">return</span> o1[<span class="number">1</span>] - o2[<span class="number">1</span>];</span><br><span class="line">        }));</span><br><span class="line">        hashMap.forEach((key, value) -&gt; {	<span class="comment">// 将哈希表元素保存到优先队列中进行排序</span></span><br><span class="line">            pq.offer(<span class="keyword">new</span> <span class="title class_">int</span>[]{key ,value});</span><br><span class="line">            <span class="keyword">if</span> (pq.size() &gt; k) 	<span class="comment">// 维护队列中只排序k个元组</span></span><br><span class="line">                pq.poll();</span><br><span class="line">        });</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> k-<span class="number">1</span>; i &gt;= <span class="number">0</span>; -- i) {	<span class="comment">// 获取前k个高频元素</span></span><br><span class="line">            ans[i] = pq.poll()[<span class="number">0</span>];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:13 ms,击败了45.40% 的Java用户<br>
+内存消耗:47.8 MB,击败了5.00% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>l</mi><mi>o</mi><msub><mi>g</mi><mrow></mrow></msub><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nlog_{}{k})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-1.85em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 </li>
 </ul>
 
@@ -615,7 +642,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text"> 前k个高频元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(优先队列)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text"> 前k个高频元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%A4%A7%E9%A1%B6%E5%A0%86%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(大顶堆优先队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%B0%8F%E9%A1%B6%E5%A0%86%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(小顶堆优先队列)</span></a></li></ol>
     </div>
 </div>
 
@@ -784,7 +811,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text"> 前k个高频元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(优先队列)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text"> 前k个高频元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%A4%A7%E9%A1%B6%E5%A0%86%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(大顶堆优先队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%B0%8F%E9%A1%B6%E5%A0%86%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(小顶堆优先队列)</span></a></li></ol>
     </div>
 </div>
 
