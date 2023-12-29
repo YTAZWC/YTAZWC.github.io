@@ -337,7 +337,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Dec 27 2023 14:26:50 GMT+0800">2023-12-27 14:26:50</span>
+                <span class="pc" data-updated="Sat Dec 30 2023 00:40:56 GMT+0800">2023-12-30 00:40:56</span>
             </span>
         
 
@@ -379,12 +379,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>586 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.1k 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
             </span>
         
         
@@ -462,6 +462,39 @@ mjx-container[display="true"] + br {
 </li>
 <li>
 <p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，考虑递归函数的调用</p>
+</li>
+</ul>
+<h1 id="解法二迭代-栈"><a class="markdownIt-Anchor" href="#解法二迭代-栈"></a> 解法二(迭代 栈)</h1>
+<p>思路分析：</p>
+<ol>
+<li>
+<p>根据栈和递归的关系，对于该题可以使用栈来完成二叉树的前序遍历，即应首先思考栈中应该保存什么，因为我们遍历的二叉树，所以栈中应该存储二叉树的节点</p>
+</li>
+<li>
+<p>对于迭代，先思考迭代的过程，前序遍历的顺序是 中左右，因此迭代中，首先要遍历到中节点，然后再遍历左右</p>
+</li>
+<li>
+<p>所以，在迭代前，应先将根节点保存到栈中，然后才能在迭代中先获取中间节点，然后再继续遍历左右节点，根据栈先进后出的规律，所以先将右节点保存到栈中，再将左节点保存到栈中，如此，在下一轮迭代前，先出来遍历的则是左节点</p>
+</li>
+<li>
+<p>同时对于迭代的退出条件，既然用栈来存放二叉树的节点，则当栈为空时，说明已经遍历完二叉树，所以栈为空时，退出循环</p>
+</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">preorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)    <span class="comment">// 边界条件</span></span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();    <span class="comment">// 用于存储二叉树的节点</span></span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) {</span><br><span class="line">            <span class="comment">// 前序遍历先遍历 中</span></span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">            ans.add(node.val);</span><br><span class="line">            <span class="comment">// 根据栈后进先出 先保存右节点</span></span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="literal">null</span>)</span><br><span class="line">                stack.push(node.right);</span><br><span class="line">            <span class="comment">// 再保存左节点</span></span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="literal">null</span>)</span><br><span class="line">                stack.push(node.left);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:0 ms,击败了100.00% 的Java用户<br>
+内存消耗:40.1 MB,击败了10.31% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，遍历整个二叉树</p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，使用栈来辅助遍历二叉树</p>
 </li>
 </ul>
 
@@ -611,7 +644,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的前序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的前序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3-%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代 栈)</span></a></li></ol>
     </div>
 </div>
 
@@ -780,7 +813,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的前序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的前序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3-%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代 栈)</span></a></li></ol>
     </div>
 </div>
 

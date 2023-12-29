@@ -337,7 +337,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Dec 27 2023 14:54:45 GMT+0800">2023-12-27 14:54:45</span>
+                <span class="pc" data-updated="Sat Dec 30 2023 00:40:51 GMT+0800">2023-12-30 00:40:51</span>
             </span>
         
 
@@ -379,12 +379,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>435 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>755 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -446,6 +446,28 @@ mjx-container[display="true"] + br {
 <p>解答成功:<br>
 执行耗时:0 ms,击败了100.00% 的Java用户<br>
 内存消耗:40.5 MB,击败了5.02% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+</li>
+</ul>
+<h1 id="解法二迭代"><a class="markdownIt-Anchor" href="#解法二迭代"></a> 解法二(迭代)</h1>
+<p>思路分析：</p>
+<ol>
+<li>根据二叉树前序遍历为 <strong>中左右</strong>，那么可以将前序遍历代码遍历顺序改为 <strong>中右左</strong>，然后再将遍历结果反转 即可得到<strong>左右中</strong>后序遍历顺序</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">postorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)   <span class="comment">// 边界条件</span></span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="comment">// 按照 中右左 顺序遍历二叉树</span></span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) {</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">            ans.add(node.val);</span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="literal">null</span>) stack.push(node.left);</span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="literal">null</span>) stack.push(node.right);</span><br><span class="line">        }</span><br><span class="line">        Collections.reverse(ans);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 另一种迭代写法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">inorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)    <span class="comment">// 边界条件</span></span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        <span class="type">TreeNode</span> <span class="variable">cur</span> <span class="operator">=</span> root;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="literal">null</span> || !stack.isEmpty()) {</span><br><span class="line">            <span class="keyword">if</span> (cur != <span class="literal">null</span>) {    <span class="comment">// 如果该节点不为空 则让其一直往左</span></span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur = cur.left;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                cur = stack.pop();    <span class="comment">// 此时处理栈弹出的元素</span></span><br><span class="line">                ans.add(cur.val);</span><br><span class="line">                cur = cur.right;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:0 ms,击败了100.00% 的Java用户<br>
+内存消耗:40.7 MB,击败了5.04% 的Java用户</p>
 </blockquote>
 <p>复杂度分析：</p>
 <ul>
@@ -603,7 +625,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代)</span></a></li></ol>
     </div>
 </div>
 
@@ -772,7 +794,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代)</span></a></li></ol>
     </div>
 </div>
 
