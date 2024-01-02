@@ -9,7 +9,7 @@
     
     <title>
         
-            面试题_02_07_链表相交 |
+            LC116.填充每个节点的下一个右侧节点指针 |
         
         花木凋零成兰
     </title>
@@ -36,7 +36,119 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -190,7 +302,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        面试题_02_07_链表相交
+                        LC116.填充每个节点的下一个右侧节点指针
                     </div>
                 
 
@@ -219,13 +331,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-12-09 14:03:17</span>
-                <span class="mobile">2023-12-09 14:03</span>
+                <span class="pc">2024-01-02 19:30:32</span>
+                <span class="mobile">2024-01-02 19:30</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sat Dec 09 2023 17:06:34 GMT+0800">2023-12-09 17:06:34</span>
+                <span class="pc" data-updated="Tue Jan 02 2024 20:17:32 GMT+0800">2024-01-02 20:17:32</span>
             </span>
         
 
@@ -234,9 +346,6 @@
                 <ul class="article-category-ul">
                     
                             <li class="category-item"><a href="/categories/leetcode/">leetcode</a></li>
-                        
-                    
-                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/leetcode/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></li>
                         
                     
                 </ul>
@@ -251,13 +360,19 @@
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A0%91/">树</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a></li>
+                        
+                    
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%93%BE%E8%A1%A8/">链表</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a></li>
                         
                     
                 </ul>
@@ -267,12 +382,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>913 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -293,133 +408,92 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="面试题0207-链表相交"><a class="markdownIt-Anchor" href="#面试题0207-链表相交"></a> [面试题02.07] 链表相交</h1>
-<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/" >面试题 02.07. 链表相交 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></p>
-<p>给你两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。</p>
-<p>图示两个链表在节点 <code>c1</code> 开始相交 <strong>：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png"><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png"
-                      alt="" 
-                ></a></p>
-<p>题目数据 <strong>保证</strong> 整个链式结构中不存在环。</p>
-<p><strong>注意</strong>，函数返回结果后，链表必须 <strong>保持其原始结构</strong> 。</p>
+                    <h1 id="116-填充每个节点的下一个右侧节点指针"><a class="markdownIt-Anchor" href="#116-填充每个节点的下一个右侧节点指针"></a> <a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/">116. 填充每个节点的下一个右侧节点指针<i class="fas fa-external-link-alt"></i></a></h1>
+<p>给定一个 <strong>完美二叉树</strong> ，其所有叶子节点都在同一层，每个父节点都有两个子节点。二叉树定义如下：</p>
+<p>struct Node {<br>
+int val;<br>
+Node *left;<br>
+Node *right;<br>
+Node *next;<br>
+}</p>
+<p>填充它的每个 next 指针，让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 <code>NULL</code>。</p>
+<p>初始状态下，所有 next 指针都被设置为 <code>NULL</code>。</p>
 <p><strong>示例 1：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode.com/uploads/2018/12/13/160_example_1.png"><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_1.png"
-                      alt="" 
-                ></a></p>
-<p><strong>输入：</strong> intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3<br />
-<strong>输出：</strong> Intersected at ‘8’<br />
-<strong>解释：</strong> 相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。<br />
-从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。<br />
-在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</p>
-<p><strong>示例 2：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode.com/uploads/2018/12/13/160_example_2.png"><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png"
-                      alt="" 
-                ></a></p>
-<p><strong>输入：</strong> intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1<br />
-<strong>输出：</strong> Intersected at ‘2’<br />
-<strong>解释：</strong> 相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。<br />
-从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。<br />
-在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。</p>
-<p><strong>示例 3：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode.com/uploads/2018/12/13/160_example_3.png"><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png"
-                      alt="" 
-                ></a></p>
-<p><strong>输入：</strong> intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2<br />
-<strong>输出：</strong> null<br />
-<strong>解释：</strong> 从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。<br />
-由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。<br />
-这两个链表不相交，因此返回 null 。</p>
+<p><img lazyload="" alt="" data-src="https://assets.leetcode.com/uploads/2019/02/14/116_sample.png"></p>
+<p><strong>输入：</strong> root = [1,2,3,4,5,6,7]<br>
+<strong>输出：</strong>[1,#,2,3,#,4,5,6,7,#]<br>
+<strong>解释：</strong> 给定二叉树如图 A 所示，你的函数应该填充它的每个 next 指针，以指向其下一个右侧节点，如图 B 所示。序列化的输出按层序遍历排列，同一层节点由 next 指针连接，‘#’ 标志着每一层的结束。</p>
+<p><strong>示例 2:</strong></p>
+<p><strong>输入：</strong> root = []<br>
+<strong>输出：</strong>[]</p>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>listA</code> 中节点数目为 <code>m</code></li>
-<li><code>listB</code> 中节点数目为 <code>n</code></li>
-<li><code>0 &lt;= m, n &lt;= 3 * 10^4</code></li>
-<li><code>1 &lt;= Node.val &lt;= 10^5</code></li>
-<li><code>0 &lt;= skipA &lt;= m</code></li>
-<li><code>0 &lt;= skipB &lt;= n</code></li>
-<li>如果 <code>listA</code> 和 <code>listB</code> 没有交点，<code>intersectVal</code> 为 <code>0</code></li>
-<li>如果 <code>listA</code> 和 <code>listB</code> 有交点，<code>intersectVal == listA[skipA + 1] == listB[skipB + 1]</code></li>
+<li>树中节点的数量在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><msup><mn>2</mn><mn>12</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 2^{12} - 1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 范围内</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1000</mn><mo>≤</mo><mi>n</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi mathvariant="normal">.</mi><mi>v</mi><mi>a</mi><mi>l</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">-1000 \leq node.val \leq 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
 </ul>
-<p><strong>进阶：</strong> 你能否设计一个时间复杂度 <code>O(n)</code> 、仅用 <code>O(1)</code> 内存的解决方案？</p>
-<h1 id="解题"><a class="markdownIt-Anchor" href="#解题"></a> 解题</h1>
-<h2 id="解法一哈希表"><a class="markdownIt-Anchor" href="#解法一哈希表"></a> 解法一(哈希表)</h2>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>你只能使用常量级额外空间。</li>
+<li>使用递归解题也符合要求，本题中递归程序占用的栈空间不算做额外的空间复杂度。</li>
+</ul>
+<h1 id="解法一bfs队列"><a class="markdownIt-Anchor" href="#解法一bfs队列"></a> 解法一(BFS+队列)</h1>
 <p>思路分析：</p>
 <ol>
 <li>
-<p>定义一个哈希表<code>hashNode</code>，用来存储链表<code>headA</code>的节点，</p>
+<p>使用二叉树的层序遍历，对二叉树进行层序遍历</p>
 </li>
 <li>
-<p>再对链表<code>headB</code>进行遍历，若<code>hashNode</code>中存在<code>headB</code>的节点，则说明两个链表相交</p>
-</li>
-<li>
-<p>并返回第一个相交的点</p>
+<p>在遍历过程中，将每层的节点进行连接</p>
 </li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">getIntersectionNode</span><span class="params">(ListNode headA, ListNode headB)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (headA == <span class="literal">null</span> || headB == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;    <span class="comment">// 若任意一个链表为空 则说明两个链表没有交点</span></span><br><span class="line">        <span class="comment">// 存储记录 headA 中的节点</span></span><br><span class="line">        HashMap&lt;ListNode, Integer&gt; hashNode = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curA</span> <span class="operator">=</span> headA;</span><br><span class="line">        <span class="keyword">while</span> (curA != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 将headA的节点保存到哈希表中</span></span><br><span class="line">            hashNode.put(curA, <span class="number">1</span>);</span><br><span class="line">            curA = curA.next;   <span class="comment">// 继续遍历headA</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 判断两个链表是否相交</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curB</span> <span class="operator">=</span> headB;</span><br><span class="line">        <span class="keyword">while</span> (curB != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (hashNode.containsKey(curB)) &#123;   <span class="comment">// 若哈希表中存在节点</span></span><br><span class="line">                <span class="keyword">return</span> curB;    <span class="comment">// 直接返回第一个相交的节点</span></span><br><span class="line">            &#125;</span><br><span class="line">            curB = curB.next;   <span class="comment">// 继续遍历headB</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">connect</span><span class="params">(Node root)</span> {</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        Queue&lt;Node&gt; queue = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) {</span><br><span class="line">            <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> queue.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; ++ i) {</span><br><span class="line">                <span class="type">Node</span> <span class="variable">node</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (i == size-<span class="number">1</span>) <span class="comment">// 此时节点为一层最后的节点</span></span><br><span class="line">                    node.next = <span class="literal">null</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="comment">// 若不为最后一层节点 则指向队列中的下一个即可</span></span><br><span class="line">                    node.next = queue.peek();</span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="literal">null</span>) queue.offer(node.left);</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="literal">null</span>) queue.offer(node.right);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:6 ms,击败了9.32% 的Java用户</span><br><span class="line">    内存消耗:45.7 MB,击败了6.07% 的Java用户</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:3 ms,击败了36.17% 的Java用户<br>
+内存消耗:43.1 MB,击败了9.05% 的Java用户</p>
+</blockquote>
 <p>复杂度分析：</p>
 <ul>
 <li>
-<p>时间复杂度：O(n+m)，需要遍历链表<code>headA</code>和链表<code>headB</code></p>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 </li>
 <li>
-<p>空间复杂度：O(m)，需要将链表<code>headA</code>的节点存储到哈希表中</p>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 </li>
 </ul>
-<h2 id="解法二双指针"><a class="markdownIt-Anchor" href="#解法二双指针"></a> 解法二(双指针)</h2>
+<h1 id="解法二递归"><a class="markdownIt-Anchor" href="#解法二递归"></a> 解法二(递归)</h1>
 <p>思路分析：</p>
 <ol>
 <li>
-<p>两个链表存在两种情况，即相交或不相交</p>
+<p>对于连接某个节点指向下一个同层右节点，具体重复递归的特点，即左节点指向右节点，因此可以思考使用递归来实现</p>
 </li>
 <li>
-<p>两个链表相交时，假设链表<code>headA</code>的不相交部分有a个节点，链表<code>headB</code>不相交部分有b个节点，则相交部分有c个节点，则<code>a+c = m</code>，<code>b+c = n</code></p>
-<ol>
-<li>
-<p>如果<code>a=b</code>，则两个指针同时遍历两个链表，会同时到达相交的节点，此时返回相交的节点</p>
+<p>首先思考递归的参数和返回值，因为具有递归特点即为，左节点指向右节点，因此递归的参数为左边节点和右边界点，同时是连接二叉树结点，因此不需要返回值</p>
 </li>
 <li>
-<p>如果<code>a!=b</code>，则指针<code>pA</code>会遍历完链表<code>headA</code>，指针<code>pB</code>会遍历完链表<code>headB</code>，两个指针不会同时遍历完两个链表，此时由上述关系是可以得出<code>m + b == n + a</code>，即<code>pA</code>遍历完<code>headA</code>后，接着遍历<code>headB</code>，<code>pB</code>遍历完<code>headB</code>后接着遍历<code>headA</code>，此时两个指针会同时遍历结束，也会同时到达两个链表相交的第一个节点，此时返回相交的节点</p>
-</li>
-</ol>
+<p>然后思考递归的边界条件，即当传递的参数左节点为空或传递的参数右结点为空时，结束递归，此外当左结点的next已指向右节点时，也结束递归，避免重复连接</p>
 </li>
 <li>
-<p>两个链表不相交时：</p>
-<ol>
-<li>
-<p>如果<code>m = n</code>，则两个指针同时遍历结束两个链表，并返回<code>null</code></p>
-</li>
-<li>
-<p>如果<code>m != n</code>，则两个指针各自遍历一遍两个链表，并同时结束遍历，返回<code>null</code></p>
-</li>
-</ol>
+<p>思考递归的过程，即左参数节点的next指向右参数结点</p>
 </li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">// 双指针</span></span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">getIntersectionNode</span><span class="params">(ListNode headA, ListNode headB)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (headA == <span class="literal">null</span> || headB == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;    <span class="comment">// 若任意一个链表为空 则说明两个链表没有交点</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pA</span> <span class="operator">=</span> headA;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pB</span> <span class="operator">=</span> headB;</span><br><span class="line">        <span class="keyword">while</span> (pA != pB) &#123;  <span class="comment">// 两个指针分别进行遍历 并判断</span></span><br><span class="line">            pA = pA==<span class="literal">null</span>? headB : pA.next;</span><br><span class="line">            pB = pB==<span class="literal">null</span>? headA : pB.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">connect</span><span class="params">(Node root)</span> {</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">null</span>)</span><br><span class="line">            FConnect(root.left, root.right);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">FConnect</span><span class="params">(Node left, Node right)</span> {</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="literal">null</span> || left.next == right || right == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> ;    <span class="comment">// 边界</span></span><br><span class="line">        left.next = right;    <span class="comment">// 递归过程 进行连接</span></span><br><span class="line">        FConnect(left.left, left.right);</span><br><span class="line">        FConnect(left.right, right.left);</span><br><span class="line">        FConnect(right.left, right.right);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解答成功:</span><br><span class="line">    执行耗时:1 ms,击败了99.24% 的Java用户</span><br><span class="line">    内存消耗:45.3 MB,击败了55.50% 的Java用户</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:0 ms,击败了100.00% 的Java用户<br>
+内存消耗:43.2 MB,击败了5.03% 的Java用户</p>
+</blockquote>
 <p>复杂度分析：</p>
 <ul>
 <li>
-<p>时间复杂度：O(m+n)，两个指针同时对两个链表进行遍历，极端时，两个指针分别遍历一次两个链表</p>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 </li>
 <li>
-<p>空间复杂度：O(1)，使用了两个指针</p>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，不考虑递归对栈的消耗，则使用常量级空间复杂度</p>
 </li>
 </ul>
 
@@ -431,11 +505,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                面试题_02_07_链表相交
+                LC116.填充每个节点的下一个右侧节点指针
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/12/09/面试题-02-07-链表相交/
+                2024/01/02/LC116-填充每个节点的下一个右侧节点指针/
             </div>
         </div>
 
@@ -451,7 +525,7 @@
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-12-09 14:03</div>
+                <div class="content">2024-01-02 19:30</div>
             </div>
 
 
@@ -489,15 +563,23 @@
                                     </li>
                                 
                                     <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A0%91/">树</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
                                     </li>
                                 
                             </ul>
@@ -513,31 +595,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/12/09/%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II-142/"
-                                   title="环形链表II_142"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">环形链表II_142</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/12/08/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9-19/"
-                                   title="删除链表的倒数第N个结点_19"
+                                   href="/2024/01/02/LC515-%E5%9C%A8%E6%AF%8F%E4%B8%AA%E6%A0%91%E8%A1%8C%E4%B8%AD%E6%89%BE%E6%9C%80%E5%A4%A7%E5%80%BC/"
+                                   title="LC515.在每个树行中找最大值"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">删除链表的倒数第N个结点_19</span>
+                                        <span class="post-nav-title-item text-ellipsis">LC515.在每个树行中找最大值</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -565,7 +631,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%980207-%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4"><span class="nav-number">1.</span> <span class="nav-text"> [面试题02.07] 链表相交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(哈希表)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text"> 116. 填充每个节点的下一个右侧节点指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(递归)</span></a></li></ol>
     </div>
 </div>
 
@@ -734,7 +800,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%980207-%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4"><span class="nav-number">1.</span> <span class="nav-text"> [面试题02.07] 链表相交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text"> 解法一(哈希表)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 解法二(双指针)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text"> 116. 填充每个节点的下一个右侧节点指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(递归)</span></a></li></ol>
     </div>
 </div>
 
