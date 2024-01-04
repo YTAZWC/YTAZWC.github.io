@@ -9,7 +9,7 @@
     
     <title>
         
-            LC145.二叉树的后序遍历 |
+            LC226.翻转二叉树 |
         
         花木凋零成兰
     </title>
@@ -302,7 +302,7 @@ mjx-container[display="true"] + br {
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        LC145.二叉树的后序遍历
+                        LC226.翻转二叉树
                     </div>
                 
 
@@ -331,13 +331,13 @@ mjx-container[display="true"] + br {
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-12-27 14:19:22</span>
-                <span class="mobile">2023-12-27 14:19</span>
+                <span class="pc">2024-01-04 10:40:01</span>
+                <span class="mobile">2024-01-04 10:40</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Dec 31 2023 19:34:39 GMT+0800">2023-12-31 19:34:39</span>
+                <span class="pc" data-updated="Thu Jan 04 2024 11:29:30 GMT+0800">2024-01-04 11:29:30</span>
             </span>
         
 
@@ -366,10 +366,10 @@ mjx-container[display="true"] + br {
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A0%88/">栈</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></li>
                         
                     
                 </ul>
@@ -379,12 +379,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>639 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
             </span>
         
         
@@ -405,47 +405,36 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="二叉树的后序遍历"><a class="markdownIt-Anchor" href="#二叉树的后序遍历"></a> <a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-postorder-traversal/">二叉树的后序遍历<i class="fas fa-external-link-alt"></i></a></h1>
-<p>给你一棵二叉树的根节点 <code>root</code> ，返回其节点值的 <strong>后序遍历</strong> 。</p>
+                    <h1 id="226-翻转二叉树"><a class="markdownIt-Anchor" href="#226-翻转二叉树"></a> <a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/invert-binary-tree/">226. 翻转二叉树<i class="fas fa-external-link-alt"></i></a></h1>
+<p>给你一棵二叉树的根节点 <code>root</code> ，翻转这棵二叉树，并返回其根节点。</p>
 <p><strong>示例 1：</strong></p>
-<p><img lazyload="" alt="" data-src="https://assets.leetcode.com/uploads/2020/08/28/pre1.jpg"></p>
-<p><strong>输入：</strong> root = [1,null,2,3]<br>
-<strong>输出：</strong> [3,2,1]</p>
+<p><img lazyload="" alt="" data-src="https://assets.leetcode.com/uploads/2021/03/14/invert1-tree.jpg"></p>
+<p><strong>输入：</strong> root = [4,2,7,1,3,6,9]<br>
+<strong>输出：</strong>[4,7,2,9,6,3,1]</p>
 <p><strong>示例 2：</strong></p>
-<p><strong>输入：</strong> root = []<br>
-<strong>输出：</strong> []</p>
+<p><img lazyload="" alt="" data-src="https://assets.leetcode.com/uploads/2021/03/14/invert2-tree.jpg"></p>
+<p><strong>输入：</strong> root = [2,1,3]<br>
+<strong>输出：</strong>[2,3,1]</p>
 <p><strong>示例 3：</strong></p>
-<p><strong>输入：</strong> root = [1]<br>
-<strong>输出：</strong> [1]</p>
+<p><strong>输入：</strong> root = []<br>
+<strong>输出：</strong>[]</p>
 <p><strong>提示：</strong></p>
 <ul>
-<li>树中节点的数目在范围 <code>[0, 100]</code> 内</li>
+<li>树中节点数目范围在 <code>[0, 100]</code> 内</li>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>100</mn><mo>≤</mo><mi>N</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi mathvariant="normal">.</mi><mi>v</mi><mi>a</mi><mi>l</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">-100 \leq Node.val \leq 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
 </ul>
-<p><strong>进阶：</strong> 递归算法很简单，你可以通过迭代算法完成吗？</p>
-<h1 id="解法一递归"><a class="markdownIt-Anchor" href="#解法一递归"></a> 解法一(递归)</h1>
+<h1 id="解法一bfs队列"><a class="markdownIt-Anchor" href="#解法一bfs队列"></a> 解法一(BFS+队列)</h1>
 <p>思路分析：</p>
 <ol>
-<li>
-<p>根据二叉树的定义，使用递归来进行求解，对于如何实现递归需要思考以下三点</p>
-</li>
-<li>
-<p>递归函数的参数和返回值；对于题目要求获取节点值并保存到一个列表中，所以递归函数的参数有两个，同时也可以发现不需要有返回值</p>
-</li>
-<li>
-<p>递归的终止条件；因为采用深度优先搜索，所以会一直往下遍历，直到二叉树节点为空，则停止，所以终止条件为；节点为空</p>
-</li>
-<li>
-<p>单层递归的过程；由于采用后序遍历，所以需要先继续递归遍历左子节点，再递归遍历右子节点，最后读取当前节点的值</p>
-</li>
+<li>对二叉树进行层序遍历，每遍历一个节点，则将其左右节点进行反转</li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">postorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        postorder(root, ans);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">postorder</span><span class="params">(TreeNode node, List&lt;Integer&gt; ans)</span> {</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        postorder(node.left, ans);</span><br><span class="line">        postorder(node.right, ans);</span><br><span class="line">        ans.add(node.val);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">invertTree</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">null</span>) {</span><br><span class="line">            Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">            queue.offer(root);</span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty()) {</span><br><span class="line">                <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> queue.size();</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; ++ i) {</span><br><span class="line">                    <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">                    <span class="comment">// 进行左右节点交换</span></span><br><span class="line">                    <span class="type">TreeNode</span> <span class="variable">temp</span> <span class="operator">=</span> node.left;</span><br><span class="line">                    node.left = node.right;</span><br><span class="line">                    node.right = temp;</span><br><span class="line">                    <span class="keyword">if</span> (node.left != <span class="literal">null</span>) queue.offer(node.left);</span><br><span class="line">                    <span class="keyword">if</span> (node.right != <span class="literal">null</span>) queue.offer(node.right);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
 <blockquote>
 <p>解答成功:<br>
 执行耗时:0 ms,击败了100.00% 的Java用户<br>
-内存消耗:40.5 MB,击败了5.02% 的Java用户</p>
+内存消耗:40 MB,击败了8.36% 的Java用户</p>
 </blockquote>
 <p>复杂度分析：</p>
 <ul>
@@ -456,48 +445,29 @@ mjx-container[display="true"] + br {
 <p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 </li>
 </ul>
-<h1 id="解法二迭代"><a class="markdownIt-Anchor" href="#解法二迭代"></a> 解法二(迭代)</h1>
+<h1 id="解法二递归"><a class="markdownIt-Anchor" href="#解法二递归"></a> 解法二(递归)</h1>
 <p>思路分析：</p>
 <ol>
-<li>根据二叉树前序遍历为 <strong>中左右</strong>，那么可以将前序遍历代码遍历顺序改为 <strong>中右左</strong>，然后再将遍历结果反转 即可得到<strong>左右中</strong>后序遍历顺序</li>
+<li>
+<p>对于翻转二叉树，即交换二叉树每个节点的左右子节点，即可实现翻转，交换过程具有重复性，因此考虑使用迭代和递归来实现，因为感觉递归更简单，则使用递归</p>
+</li>
+<li>
+<p>首先思考递归的参数，因为实现翻转二叉树，因此参数中传递二叉树节点即可，对于返回值，因为要对二叉树进行改变，所以应该返回交换好的二叉树节点</p>
+</li>
+<li>
+<p>对于递归的边界条件，即当二叉树节点为null时，返回<code>null</code>即可</p>
+</li>
+<li>
+<p>对于交换过程，则先保存好该节点的左子节点，然后左子节点重新赋值为已经交换好的该节点的右子二叉树，同理，右子树重新赋值为已经交换好的该节点的左子二叉树</p>
+</li>
 </ol>
 <p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">postorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)   <span class="comment">// 边界条件</span></span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="comment">// 按照 中右左 顺序遍历二叉树</span></span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) {</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">            ans.add(node.val);</span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="literal">null</span>) stack.push(node.left);</span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="literal">null</span>) stack.push(node.right);</span><br><span class="line">        }</span><br><span class="line">        Collections.reverse(ans);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 另一种迭代写法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">inorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)    <span class="comment">// 边界条件</span></span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        <span class="type">TreeNode</span> <span class="variable">cur</span> <span class="operator">=</span> root;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="literal">null</span> || !stack.isEmpty()) {</span><br><span class="line">            <span class="keyword">if</span> (cur != <span class="literal">null</span>) {    <span class="comment">// 如果该节点不为空 则让其一直往左</span></span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur = cur.left;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                cur = stack.pop();    <span class="comment">// 此时处理栈弹出的元素</span></span><br><span class="line">                ans.add(cur.val);</span><br><span class="line">                cur = cur.right;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">invertTree</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">null</span>) {</span><br><span class="line">            root = doInvertTree(root);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">private</span> TreeNode <span class="title function_">doInvertTree</span><span class="params">(TreeNode node)</span> {</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">TreeNode</span> <span class="variable">temp</span> <span class="operator">=</span> node.left;</span><br><span class="line">        node.left = doInvertTree(node.right);</span><br><span class="line">        node.right = doInvertTree(temp);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>提交结果如下：</p>
 <blockquote>
 <p>解答成功:<br>
 执行耗时:0 ms,击败了100.00% 的Java用户<br>
-内存消耗:40.7 MB,击败了5.04% 的Java用户</p>
-</blockquote>
-<p>复杂度分析：</p>
-<ul>
-<li>
-<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
-</li>
-<li>
-<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
-</li>
-</ul>
-<h1 id="解法三统一迭代法"><a class="markdownIt-Anchor" href="#解法三统一迭代法"></a> 解法三(统一迭代法)</h1>
-<p>思路分析：</p>
-<ol>
-<li>
-<p>对于将要访问的节点 和 将要处理的节点 均压入栈中</p>
-</li>
-<li>
-<p>使用空指针来标记将要处理的节点</p>
-</li>
-<li>
-<p>使栈中元素按照后序遍历顺序出栈</p>
-</li>
-</ol>
-<p>实现代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="comment">// 统一迭代法 后序</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">postorderTraversal</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) {</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">            <span class="keyword">if</span> (node != <span class="literal">null</span>) {</span><br><span class="line">                <span class="comment">// 后序遍历 先保存中间节点</span></span><br><span class="line">                stack.push(node);</span><br><span class="line">                stack.push(<span class="literal">null</span>);    <span class="comment">// 空指针作为标记</span></span><br><span class="line">                <span class="comment">// 再保存右节点</span></span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="literal">null</span>)</span><br><span class="line">                    stack.push(node.right);</span><br><span class="line">                <span class="comment">// 最后保存左节点</span></span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="literal">null</span>)</span><br><span class="line">                    stack.push(node.left);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                node = stack.pop();</span><br><span class="line">                ans.add(node.val);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>提交结果如下：</p>
-<blockquote>
-<p>解答成功:<br>
-执行耗时:0 ms,击败了100.00% 的Java用户<br>
-内存消耗:40.6 MB,击败了5.13% 的Java用户</p>
+内存消耗:39.9 MB,击败了11.22% 的Java用户</p>
 </blockquote>
 <p>复杂度分析：</p>
 <ul>
@@ -517,11 +487,11 @@ mjx-container[display="true"] + br {
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                LC145.二叉树的后序遍历
+                LC226.翻转二叉树
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2023/12/27/LC145-二叉树的后序遍历/
+                2024/01/04/LC226-翻转二叉树/
             </div>
         </div>
 
@@ -537,7 +507,7 @@ mjx-container[display="true"] + br {
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-12-27 14:19</div>
+                <div class="content">2024-01-04 10:40</div>
             </div>
 
 
@@ -583,11 +553,11 @@ mjx-container[display="true"] + br {
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A0%88/">栈</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
                                     </li>
                                 
                             </ul>
@@ -603,31 +573,15 @@ mjx-container[display="true"] + br {
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/12/27/LC94-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"
-                                   title="LC94.二叉树的中序遍历"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">LC94.二叉树的中序遍历</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/12/27/LC144.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/"
-                                   title="LC144.二叉树的前序遍历"
+                                   href="/2024/01/03/%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0%E4%B8%8EMySQL%E5%AE%89%E8%A3%85/"
+                                   title="基础篇.数据库概述与MySQL安装"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">LC144.二叉树的前序遍历</span>
+                                        <span class="post-nav-title-item text-ellipsis">基础篇.数据库概述与MySQL安装</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -655,7 +609,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89%E7%BB%9F%E4%B8%80%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text"> 解法三(统一迭代法)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text"> 226. 翻转二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(递归)</span></a></li></ol>
     </div>
 </div>
 
@@ -824,7 +778,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text"> 二叉树的后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89%E7%BB%9F%E4%B8%80%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text"> 解法三(统一迭代法)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text"> 226. 翻转二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(递归)</span></a></li></ol>
     </div>
 </div>
 
