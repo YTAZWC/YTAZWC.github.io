@@ -9,7 +9,7 @@
     
     <title>
         
-            基础篇.数据库概述与MySQL安装 |
+            LC101.对称二叉树 |
         
         花木凋零成兰
     </title>
@@ -302,7 +302,7 @@ mjx-container[display="true"] + br {
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        基础篇.数据库概述与MySQL安装
+                        LC101.对称二叉树
                     </div>
                 
 
@@ -331,13 +331,13 @@ mjx-container[display="true"] + br {
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2024-01-03 23:30:06</span>
-                <span class="mobile">2024-01-03 23:30</span>
+                <span class="pc">2024-01-05 09:04:49</span>
+                <span class="mobile">2024-01-05 09:04</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Fri Jan 05 2024 00:45:56 GMT+0800">2024-01-05 00:45:56</span>
+                <span class="pc" data-updated="Fri Jan 05 2024 11:10:09 GMT+0800">2024-01-05 11:10:09</span>
             </span>
         
 
@@ -345,10 +345,7 @@ mjx-container[display="true"] + br {
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul class="article-category-ul">
                     
-                            <li class="category-item"><a href="/categories/%E5%B0%9A%E7%A1%85%E8%B0%B7MySQL%E5%85%A5%E9%97%A8%E5%88%B0%E9%AB%98%E7%BA%A7/">尚硅谷MySQL入门到高级</a></li>
-                        
-                    
-                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/%E5%B0%9A%E7%A1%85%E8%B0%B7MySQL%E5%85%A5%E9%97%A8%E5%88%B0%E9%AB%98%E7%BA%A7/%E5%9F%BA%E7%A1%80%E7%AF%87/">基础篇</a></li>
+                            <li class="category-item"><a href="/categories/leetcode/">leetcode</a></li>
                         
                     
                 </ul>
@@ -360,7 +357,19 @@ mjx-container[display="true"] + br {
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="article-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/MySQL/">MySQL</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A0%91/">树</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></li>
                         
                     
                 </ul>
@@ -370,12 +379,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>106 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>960 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
             </span>
         
         
@@ -396,16 +405,86 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="数据库概述"><a class="markdownIt-Anchor" href="#数据库概述"></a> 数据库概述</h1>
-<h2 id="为什么要使用数据库"><a class="markdownIt-Anchor" href="#为什么要使用数据库"></a> 为什么要使用数据库</h2>
+                    <h1 id="101-对称二叉树"><a class="markdownIt-Anchor" href="#101-对称二叉树"></a> <a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/description/">101. 对称二叉树<i class="fas fa-external-link-alt"></i></a></h1>
+<p>给你一个二叉树的根节点 <code>root</code> ， 检查它是否轴对称。</p>
+<p><strong>示例 1：</strong></p>
+<p><img lazyload="" alt="" data-src="https://pic.leetcode.cn/1698026966-JDYPDU-image.png"></p>
+<p><strong>输入：</strong> root = [1,2,2,3,4,4,3]<br>
+<strong>输出：</strong> true</p>
+<p><strong>示例 2：</strong></p>
+<p><img lazyload="" alt="" data-src="https://pic.leetcode.cn/1698027008-nPFLbM-image.png"></p>
+<p><strong>输入：</strong> root = [1,2,2,null,3,null,3]<br>
+<strong>输出：</strong> false</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>树中节点数目在范围 <code>[1, 1000]</code> 内</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>100</mn><mo>≤</mo><mi>N</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi mathvariant="normal">.</mi><mi>v</mi><mi>a</mi><mi>l</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">-100 \leq Node.val \leq 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
+</ul>
+<p><strong>进阶：</strong> 你可以运用递归和迭代两种方法解决这个问题吗？</p>
+<h1 id="解法一递归"><a class="markdownIt-Anchor" href="#解法一递归"></a> 解法一(递归)</h1>
+<p>思路分析：</p>
 <ol>
 <li>
-<p>持久化(persistence)：把<strong>数据保存到可掉电式存储设备中以供之后使用，数据持久化意味着将内存中的数据保存到硬盘上加以“固化”</strong></p>
+<p>对于该题使用递归思路比较简单，即比较对称位置的两个节点是否相等</p>
 </li>
 <li>
-<p>持久化的主要作用是：<strong>将内存中的数据存储在关系型数据库中</strong>，也可以存储在磁盘文件、XML数据文件中。</p>
+<p>对于递归的参数，则传递需要比较的两个节点，同时返回值则返回比较结果，相等则继续返回<code>true</code>，不相等则返回<code>false</code></p>
+</li>
+<li>
+<p>对于递归的边界条件，需要注意的是，<strong>当对称位置两个节点均为<code>null</code>时，也算相等</strong>，所以两个节点存在且只有一个节点为<code>null</code>时，显然直接返回<code>false</code></p>
+</li>
+<li>
+<p>至于递归过程，则是判断当前 对称位置的两个节点是否相等，然后继续往下递归</p>
 </li>
 </ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSymmetric</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        <span class="comment">// 注意题目条件 root != null</span></span><br><span class="line">        <span class="keyword">return</span> doIsSymmetric(root.left, root.right);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">doIsSymmetric</span><span class="params">(TreeNode left, TreeNode right)</span> {</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="literal">null</span> &amp;&amp; right != <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (left != <span class="literal">null</span> &amp;&amp; right == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="literal">null</span> &amp;&amp; right == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 相等比较 节点值		然后接着判断其余节点</span></span><br><span class="line">        <span class="keyword">return</span> left.val == right.val &amp;&amp; doIsSymmetric(left.left, right.right) &amp;&amp; doIsSymmetric(left.right, right.left);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:0 ms,击败了100.00% 的Java用户<br>
+内存消耗:40.4 MB,击败了13.09% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，对二叉树的节点进行遍历</p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，考虑递归对栈的消耗</p>
+</li>
+</ul>
+<h1 id="解法二迭代栈"><a class="markdownIt-Anchor" href="#解法二迭代栈"></a> 解法二(迭代+栈)</h1>
+<p>思路分析：</p>
+<ol>
+<li>
+<p>根据递归，在计算机底层使用栈来实现，所以对于该题可以使用栈来进行迭代求解</p>
+</li>
+<li>
+<p>因为题目给出二叉树至少有一个根节点，且对于根节点是否对称不需判断，因此可以使用两个栈，分别对二叉树的左右子树进行遍历。</p>
+</li>
+<li>
+<p>根据对称，对二叉树的左子树采用中左右的顺序进行遍历，对于二叉树的右子树采用中右左的顺序进行遍历，然后判断是否对称。</p>
+</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSymmetric</span><span class="params">(TreeNode root)</span> {</span><br><span class="line">        <span class="comment">// 注意题目条件 root != null</span></span><br><span class="line">        <span class="keyword">if</span>  (root.left == <span class="literal">null</span> &amp;&amp; root .right != <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;	<span class="comment">// 边界</span></span><br><span class="line">        <span class="keyword">if</span> (root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;	<span class="comment">// 边界特殊情况</span></span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        Deque&lt;TreeNode&gt; leftSt = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();	<span class="comment">// 对左子树按 中左右 进行遍历</span></span><br><span class="line">        Deque&lt;TreeNode&gt; rightSt = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();	<span class="comment">// 对右子树按 中右左 进行遍历</span></span><br><span class="line">        leftSt.push(root.left);		<span class="comment">// 左子树第一个节点进栈</span></span><br><span class="line">        rightSt.push(root.right);	<span class="comment">// 右子树第一个节点进栈</span></span><br><span class="line">        <span class="keyword">while</span> (!leftSt.isEmpty() &amp;&amp; !rightSt.isEmpty()) {</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">left</span> <span class="operator">=</span> leftSt.pop();</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">right</span> <span class="operator">=</span> rightSt.pop();</span><br><span class="line">            <span class="keyword">if</span> (left == <span class="literal">null</span> &amp;&amp; right == <span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (left == <span class="literal">null</span> &amp;&amp; right != <span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (left != <span class="literal">null</span> &amp;&amp; right == <span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (left.val != right.val)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">// 左子树 先进右节点 再进左节点</span></span><br><span class="line">            leftSt.push(left.right);</span><br><span class="line">            leftSt.push(left.left);</span><br><span class="line">            <span class="comment">// 右子树 先进左节点 再进右节点</span></span><br><span class="line">            rightSt.push(right.left);</span><br><span class="line">            rightSt.push(right.right);</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 左右遍历栈 均为空 则说明对每个节点均完成对比</span></span><br><span class="line">        <span class="keyword">return</span> leftSt.isEmpty() &amp;&amp; rightSt.isEmpty();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:1 ms,击败了18.71% 的Java用户<br>
+内存消耗:40.7 MB,击败了5.07% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+</li>
+</ul>
+<p>总结：可进一步优化，使用一个双端队列，模拟两个栈</p>
 
                 </div>
 
@@ -415,11 +494,11 @@ mjx-container[display="true"] + br {
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="post-title border-box text-ellipsis">
-                基础篇.数据库概述与MySQL安装
+                LC101.对称二叉树
             </div>
 
             <div class="post-link border-box text-ellipsis">
-                2024/01/03/基础篇-数据库概述与MySQL安装/
+                2024/01/05/LC101-对称二叉树/
             </div>
         </div>
 
@@ -435,7 +514,7 @@ mjx-container[display="true"] + br {
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2024-01-03 23:30</div>
+                <div class="content">2024-01-05 09:04</div>
             </div>
 
 
@@ -469,7 +548,23 @@ mjx-container[display="true"] + br {
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/MySQL/">MySQL</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A0%91/">树</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
                                     </li>
                                 
                             </ul>
@@ -485,31 +580,15 @@ mjx-container[display="true"] + br {
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2024/01/04/LC226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/"
-                                   title="LC226.翻转二叉树"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">LC226.翻转二叉树</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/01/03/LC111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6/"
-                                   title="LC111.二叉树的最小深度"
+                                   href="/2024/01/04/LC226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/"
+                                   title="LC226.翻转二叉树"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">LC111.二叉树的最小深度</span>
+                                        <span class="post-nav-title-item text-ellipsis">LC226.翻转二叉树</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -537,7 +616,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text"> 数据库概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text"> 为什么要使用数据库</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text"> 101. 对称二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代+栈)</span></a></li></ol>
     </div>
 </div>
 
@@ -706,7 +785,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text"> 数据库概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text"> 为什么要使用数据库</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text"> 101. 对称二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E8%BF%AD%E4%BB%A3%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(迭代+栈)</span></a></li></ol>
     </div>
 </div>
 
