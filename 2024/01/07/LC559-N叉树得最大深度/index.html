@@ -337,7 +337,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Jan 07 2024 19:46:06 GMT+0800">2024-01-07 19:46:06</span>
+                <span class="pc" data-updated="Sun Jan 07 2024 20:03:36 GMT+0800">2024-01-07 20:03:36</span>
             </span>
         
 
@@ -360,6 +360,15 @@ mjx-container[display="true"] + br {
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></li>
                         
                     
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A0%91/">树</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a></li>
+                        
+                    
                 </ul>
             </span>
         
@@ -367,12 +376,12 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>367 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>736 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -435,8 +444,52 @@ mjx-container[display="true"] + br {
 <h1 id="解法二前序求深度递归"><a class="markdownIt-Anchor" href="#解法二前序求深度递归"></a> 解法二(前序求深度+递归)</h1>
 <p>思路分析：</p>
 <ol>
-<li>参考</li>
+<li>参考<a class="link" target="_blank" rel="noopener" href="https://ytazwc.top/2024/01/03/LC104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%89%8D%E5%BA%8F%E6%B1%82%E6%B7%B1%E5%BA%A6%E9%80%92%E5%BD%92">LC104.二叉树的最大深度<i class="fas fa-external-link-alt"></i></a>思路</li>
 </ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;	<span class="comment">// 前序遍历求深度</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxDepth</span><span class="params">(Node root)</span> {</span><br><span class="line">        getMaxDepth(root, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">getMaxDepth</span><span class="params">(Node node, <span class="type">int</span> depth)</span> {</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> ;	<span class="comment">// 边界条件</span></span><br><span class="line">        <span class="comment">// 中</span></span><br><span class="line">        ans = Math.max(ans, depth);</span><br><span class="line">        <span class="comment">// 遍历N个孩子 以左开始</span></span><br><span class="line">        <span class="keyword">for</span> (Node child: node.children) {</span><br><span class="line">            getMaxDepth(child, depth+<span class="number">1</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:0 ms,击败了100.00% 的Java用户<br>
+内存消耗:43 MB,击败了5.77% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，此处考虑，递归对空间的消耗</p>
+</li>
+</ul>
+<h1 id="解法三后序求高度递归"><a class="markdownIt-Anchor" href="#解法三后序求高度递归"></a> 解法三(后序求高度+递归)</h1>
+<p>思路分析：</p>
+<ol>
+<li>
+<p>因为根节点得高度就是二叉树得最大深度，因此可以使用后序遍历来求根节点得高度，采用递归得方式。</p>
+</li>
+<li>
+<p>具体思路参考<a class="link" target="_blank" rel="noopener" href="https://ytazwc.top/2024/01/03/LC104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/#%E8%A7%A3%E6%B3%95%E4%B8%89%E5%90%8E%E5%BA%8F%E6%B1%82%E9%AB%98%E5%BA%A6%E9%80%92%E5%BD%92">LC104.二叉树的最大深度<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ol>
+<p>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxDepth</span><span class="params">(Node root)</span> {</span><br><span class="line">        <span class="keyword">return</span> getHeight(root);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 后序遍历求某节点的高度</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">getHeight</span><span class="params">(Node node)</span> {</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;	<span class="comment">// 空节点 高度为0</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">height</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (Node child: node.children) {</span><br><span class="line">            height = Math.max(getHeight(child), height);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> height+<span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>提交结果如下：</p>
+<blockquote>
+<p>解答成功:<br>
+执行耗时:0 ms,击败了100.00% 的Java用户<br>
+内存消耗:43.2 MB,击败了5.03% 的Java用户</p>
+</blockquote>
+<p>复杂度分析：</p>
+<ul>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+</li>
+<li>
+<p>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，考虑递归对空间的消耗</p>
+</li>
+</ul>
 
                 </div>
 
@@ -503,6 +556,18 @@ mjx-container[display="true"] + br {
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
                                     </li>
                                 
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A0%91/">树</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+                                    </li>
+                                
                             </ul>
                         
                     </div>
@@ -552,7 +617,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#559-n-%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text"> 559. N 叉树的最大深度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%89%8D%E5%BA%8F%E6%B1%82%E6%B7%B1%E5%BA%A6%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(前序求深度+递归)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#559-n-%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text"> 559. N 叉树的最大深度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%89%8D%E5%BA%8F%E6%B1%82%E6%B7%B1%E5%BA%A6%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(前序求深度+递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89%E5%90%8E%E5%BA%8F%E6%B1%82%E9%AB%98%E5%BA%A6%E9%80%92%E5%BD%92"><span class="nav-number">4.</span> <span class="nav-text"> 解法三(后序求高度+递归)</span></a></li></ol>
     </div>
 </div>
 
@@ -721,7 +786,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#559-n-%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text"> 559. N 叉树的最大深度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%89%8D%E5%BA%8F%E6%B1%82%E6%B7%B1%E5%BA%A6%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(前序求深度+递归)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#559-n-%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text"> 559. N 叉树的最大深度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80bfs%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text"> 解法一(BFS+队列)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%89%8D%E5%BA%8F%E6%B1%82%E6%B7%B1%E5%BA%A6%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text"> 解法二(前序求深度+递归)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89%E5%90%8E%E5%BA%8F%E6%B1%82%E9%AB%98%E5%BA%A6%E9%80%92%E5%BD%92"><span class="nav-number">4.</span> <span class="nav-text"> 解法三(后序求高度+递归)</span></a></li></ol>
     </div>
 </div>
 
